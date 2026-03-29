@@ -61,6 +61,20 @@
         "command": "node scripts/open-source-repo-target.mjs submodule-update-reference open-source/aeon-waves",
         "cwd": "."
       }
+    },
+    "pr:list": {
+      "executor": "a0:run-commands",
+      "options": {
+        "command": "node scripts/open-source-repo-target.mjs pr-list open-source/aeon-waves",
+        "cwd": "."
+      }
+    },
+    "pr:merge-all": {
+      "executor": "a0:run-commands",
+      "options": {
+        "command": "node scripts/open-source-repo-target.mjs pr-merge-all open-source/aeon-waves",
+        "cwd": "."
+      }
     }
   }
 }
