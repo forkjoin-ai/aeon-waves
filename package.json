@@ -1,0 +1,30 @@
+{
+  "name": "@a0n/aeon-waves",
+  "version": "1.0.0",
+  "description": "Fluid dynamics and wave mechanics topology — turbulence-as-hope-gap mechanization",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/forkjoin-ai/aeon-waves.git"
+  },
+  "keywords": [
+    "turbulence",
+    "fluid-dynamics",
+    "hope-gap",
+    "gnosis",
+    "topology"
+  ],
+  "dependencies": {
+    "@a0n/gnosis": "workspace:*"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ]
+}
