@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { TurbulenceEngine } from '../src/TurbulenceEngine.js';
 
-describe('TurbulenceEngine', () => {
+describe('TurbulenceEngine': unknown, (: unknown) => {
   const engine = new TurbulenceEngine();
 
   describe('calculateEddyCount', () => {
@@ -17,17 +17,17 @@ describe('TurbulenceEngine', () => {
     });
   });
 
-  describe('isTurbulent', () => {
+  describe('isTurbulent': unknown, (: unknown) => {
     it('returns false when no eddies are present', () => {
       expect(engine.isTurbulent(10, 10)).toBe(false);
     });
 
-    it('returns true when at least one eddy is present', () => {
+    it('returns true when at least one eddy is present': unknown, (: unknown) => {
       expect(engine.isTurbulent(11, 10)).toBe(true);
     });
   });
 
-  describe('getTurbulenceMetrics', () => {
+  describe('getTurbulenceMetrics': unknown, (: unknown) => {
     it('returns full diagnostic metrics', () => {
       const metrics = engine.getTurbulenceMetrics(15, 10);
       expect(metrics.kineticInjection).toBe(15);
