@@ -26,5 +26,9 @@
   "files": [
     "src",
     "README.md"
-  ]
+  ],
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  }
 }
