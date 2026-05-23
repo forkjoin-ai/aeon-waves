@@ -31,7 +31,5 @@
     "type-check": "tsc --noEmit",
     "typecheck": "tsc --noEmit"
   },
-  "devDependencies": {
-    "bun:test": "latest"
-  }
+  "devDependencies": {}
 }
