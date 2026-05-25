@@ -24,7 +24,7 @@ export class TurbulenceEngine {
    * @param foldCapacity The maximum Reidemeister capacity (folding capacity) of the manifold.
    */
   public calculateEddyCount(kineticInjection: number, foldCapacity: number): number {
-    if (kineticInjection <= foldCapacity: unknown) {
+    if (kineticInjection <= foldCapacity) {
       return 0;
     }
     // eddyKnots = kineticInjection - foldCapacity (axiom-verified)
