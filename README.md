@@ -22,6 +22,17 @@ This package bridges `StringTheoryCorrespondence.lean` theorems to executable ru
 
 See `open-source/gnosis/lean/Lean/ForkRaceFoldTheorems/StringTheoryCorrespondence.lean`
 
+## Jet-Engine Compressor Cascade
+
+No clean multiplicative stage here. The engines (Turbulence/Oceanography/Astronomy/Geology) are
+pure formal-diagnostic evaluators of a single God-Formula (`w = R - min(v, R) + 1`) — there is no
+compression/codec, caching/skip, batching, fan-out, dedup, or parallel speedup to multiply. They map
+Lean theorems to executable metrics, an OSI **L6 (presentation)** representation transform. If a real
+pipeline ever lands here (e.g. a batched/fan-out diagnostic sweep), declare it with the shared cascade
+primitive `open-source/aether/src/wasm-simd/compressor-cascade.ts` (`stage`, `overallRatio`, `compose`,
+`cascadeReport`) — the OSI keystone is `Gnosis.OSICompressorCascade.osi_is_the_jet_compressor`, whose
+overall ratio is the product of per-layer ratios (`Gnosis.MathJetEngine.overallRatio_append`).
+
 ## License
 
 MIT
