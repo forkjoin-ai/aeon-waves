@@ -1,0 +1,122 @@
+# aeon-waves — easy-deploy site (driven entirely by this file).
+#
+# Deploy with:  a0 xr deploy
+#
+# aeon-waves has no worker `main`; the [site] block makes it a topology-driven
+# site. x-ranger synthesizes a worker that renders this content with the
+# `oss-template` kit via the @a0n/aeon-flux runtime.
+#
+# Content is sourced from open-source/aeon-waves/README.md — keep it honest.
+
+name = "aeon-waves-site"
+compatibility_date = "2025-01-01"
+workers_dev = true
+
+[site]
+kit = "oss-template"
+title = "aeon-waves — String Theory Correspondence runtime for Gnosis"
+
+[site.project]
+name = "Aeon Waves"
+tagline = "Programs are strings. Crossings are tangles. Beta1 is worldsheet genus."
+description = "A String Theory Correspondence runtime that bridges StringTheoryCorrespondence.lean theorems to executable TypeScript. Module boundaries become D-branes; fork/fold becomes a pair-of-pants; the unknot is a correct program."
+logo = "orb"
+accent = "#7c5cff"
+theme = "dark"
+repo = "forkjoin-ai/aeon-waves"
+
+[site.sigil]
+seed = "aeon-waves"
+motion = "vortex"
+coherence = "ring"
+frame = "circle"
+
+[site.nav]
+links = ["Features|#features", "Mapping|#compare", "FAQ|#faq", "Source|https://forgo.cloud/forkjoin-ai/aeon-waves"]
+
+[site.hero]
+eyebrow = "Lean → TypeScript · knots · worldsheets · D-branes"
+install = "pnpm add @a0n/aeon-waves"
+cta_primary = "Get started"
+cta_primary_href = "#features"
+cta_secondary = "Browse the source"
+cta_secondary_href = "https://forgo.cloud/forkjoin-ai/aeon-waves"
+
+[[site.features]]
+icon = "branch"
+title = "Strings ≅ knots"
+body = "StringState is isomorphic to AlgorithmicKnot. A program is a string; its crossings are tangles, and the unknot (Vacuum) is a correct program."
+
+[[site.features]]
+icon = "layers"
+title = "Worldsheet genus"
+body = "A Worldsheet's genus equals a program's loop count (beta1). Fork and fold are the PairOfPants — composeKnots — joining and splitting worldsheets."
+
+[[site.features]]
+icon = "shield"
+title = "Gauge-equivalent transforms"
+body = "GaugeEquivalence maps to Reidemeister moves: behavior-preserving transforms that rewrite the tangle without changing the program it denotes."
+
+[[site.features]]
+icon = "lock"
+title = "D-branes as type boundaries"
+body = "A DBrane is a type boundary — a Dirichlet condition on function endpoints. Compactification is abstraction: internal dimensions hidden behind the interface."
+
+[[site.features]]
+icon = "globe"
+title = "Holography & T-duality"
+body = "Holography is the void-boundary sufficient statistic (AdS/CFT). TDuality maps a FoldedKnot to defenseWeight, the R ↔ 1/R exchange made executable."
+
+[[site.features]]
+icon = "cpu"
+title = "Formal-diagnostic engines"
+body = "Turbulence, Oceanography, Astronomy, and Geology engines are pure evaluators of one God-Formula, w = R − min(v, R) + 1 — an OSI L6 representation transform."
+
+[site.compare]
+title = "Lean theorem → runtime"
+columns = ["Lean", "Runtime"]
+
+[[site.compare.row]]
+feature = "StringState ≅ AlgorithmicKnot"
+values = ["yes", "yes"]
+
+[[site.compare.row]]
+feature = "Worldsheet genus = loop count (beta1)"
+values = ["yes", "yes"]
+
+[[site.compare.row]]
+feature = "PairOfPants = fork / fold (composeKnots)"
+values = ["yes", "yes"]
+
+[[site.compare.row]]
+feature = "GaugeEquivalence = Reidemeister moves"
+values = ["yes", "yes"]
+
+[[site.compare.row]]
+feature = "Compression / codec cascade"
+values = ["no", "no"]
+
+[[site.faq]]
+q = "What is the String Theory Correspondence?"
+a = "A mapping between Gnosis program structure and string-theoretic objects: programs are strings, crossings are tangles, beta1 is worldsheet genus, and module boundaries are D-branes. The correspondence is proved in StringTheoryCorrespondence.lean and executed here in TypeScript."
+
+[[site.faq]]
+q = "Is there a compression or codec pipeline here?"
+a = "No. There is no clean multiplicative stage. The Turbulence, Oceanography, Astronomy, and Geology engines are pure formal-diagnostic evaluators of a single God-Formula — there is no compression, caching, batching, fan-out, dedup, or parallel speedup to multiply. It is an OSI L6 (presentation) representation transform."
+
+[[site.faq]]
+q = "Where do the theorems live?"
+a = "See open-source/gnosis/lean/Lean/ForkRaceFoldTheorems/StringTheoryCorrespondence.lean for the formal surface this runtime bridges."
+
+[site.footer]
+quote = "Programs are strings. Crossings are tangles. The unknot is a correct program."
+license = "MIT"
+copyright = "© 2026 forkjoin-ai · aeon-waves contributors"
+
+[[site.footer.column]]
+title = "Project"
+links = ["Source|https://forgo.cloud/forkjoin-ai/aeon-waves", "Features|#features", "FAQ|#faq"]
+
+[[site.footer.column]]
+title = "Concepts"
+links = ["Strings & knots|#features", "Worldsheet genus|#features", "D-branes|#features"]
