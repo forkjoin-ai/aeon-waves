@@ -1,0 +1,3 @@
+// neural_goal_achievement.gg — Goal Achievement Predictor
+
+(action_history: Logs)-[:PROCESS]->(goal_model: ML)-[:PROCESS]->(success_probability: Metric)

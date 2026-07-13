@@ -1,0 +1,12 @@
+// ucan-zk-secure.gg -- bounded secure UCAN + ZK envelope flow
+
+(identity: UCANIdentity { effects: 'auth.ucan' })
+(issue: UCANIssue { can: 'aeon/sync.read', with: 'aeon://sync/session-1', effects: 'auth.ucan' })
+(verify: UCANVerify { effects: 'auth.ucan' })
+(require: UCANRequire { can: 'aeon/sync.read', with: 'aeon://sync/session-1', effects: 'auth.ucan' })
+(nonce: Nonce { reuse: 'false' })
+(gate: ZKExecutionGate { requireProofVerification: 'true', effects: 'auth.zk' })
+(sync: ZKSyncEnvelope { zkMode: 'required', crossTenant: 'true', effects: 'auth.zk' })
+(result: Result { kind: 'ok' })
+
+(identity)-[:PROCESS]->(issue)-[:PROCESS]->(verify)-[:PROCESS]->(require)-[:PROCESS]->(nonce)-[:PROCESS]->(gate)-[:PROCESS]->(sync)-[:PROCESS]->(result)

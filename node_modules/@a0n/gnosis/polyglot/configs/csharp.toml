@@ -1,0 +1,98 @@
+[language]
+id = "c_sharp"
+grammar = "c_sharp"
+extensions = [".cs"]
+name = "C#"
+
+[patterns.function]
+node_types = ["method_declaration", "constructor_declaration", "local_function_statement"]
+name_field = "name"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if_statement"
+consequence_field = "consequence"
+alternative_field = "alternative"
+
+[patterns.branch.switch_pattern]
+node_type = "switch_statement"
+body_field = "body"
+case_types = ["switch_section"]
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for_statement"
+body_field = "body"
+
+[[patterns.loop.bounded]]
+node_type = "for_each_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "do_statement"
+body_field = "body"
+
+[patterns.error_handling]
+[patterns.error_handling.try_pattern]
+try_type = "try_statement"
+body_field = "body"
+catch_type = "catch_clause"
+catch_body_field = "body"
+finally_type = "finally_clause"
+finally_body_field = "body"
+
+[patterns.resource]
+[[patterns.resource.scoped]]
+node_type = "using_statement"
+body_field = "body"
+kind = "IDisposable"
+
+[[patterns.resource.acquire]]
+text = "new FileStream("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "new StreamReader("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "SqlConnection("
+kind = "Connection"
+
+[[patterns.resource.release]]
+text = ".Dispose()"
+kind = "Generic"
+
+[[patterns.resource.release]]
+text = ".Close()"
+kind = "Generic"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "Task.Run("
+
+[[patterns.concurrency.spawn]]
+text = "new Thread("
+
+[[patterns.concurrency.spawn]]
+text = "Task.Factory.StartNew("
+
+[[patterns.concurrency.join]]
+text = ".Wait()"
+
+[[patterns.concurrency.join]]
+text = "await "
+
+[[patterns.concurrency.join]]
+text = ".Result"
+
+[patterns.locking]
+[[patterns.locking.scoped]]
+node_type = "lock_statement"
+body_field = "body"
+kind = "monitor"

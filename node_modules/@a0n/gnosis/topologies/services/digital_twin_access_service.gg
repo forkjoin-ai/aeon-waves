@@ -1,0 +1,3 @@
+// digital_twin_access_service.gg — Digital twin data access service
+
+(req: DataAccess)-[:PROCESS]->(permission_check: Auth)-[:PROCESS]->(access_twin_data: Data)

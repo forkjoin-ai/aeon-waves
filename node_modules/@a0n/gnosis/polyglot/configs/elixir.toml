@@ -1,0 +1,65 @@
+[language]
+id = "elixir"
+grammar = "elixir"
+extensions = [".ex", ".exs"]
+name = "Elixir"
+
+[patterns.function]
+node_types = ["call"]
+name_field = "target"
+body_field = "arguments"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "call"
+consequence_field = "body"
+alternative_field = "body"
+
+[patterns.branch.match_pattern]
+node_type = "case"
+body_field = "body"
+arm_type = "stab_clause"
+always_exhaustive = true
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "call"
+body_field = "body"
+
+[patterns.error_handling]
+[patterns.error_handling.try_pattern]
+try_type = "call"
+body_field = "body"
+catch_type = "stab_clause"
+catch_body_field = "body"
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "File.open("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = ":gen_tcp.connect("
+kind = "Socket"
+
+[[patterns.resource.release]]
+text = "File.close("
+kind = "File"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "Task.async("
+
+[[patterns.concurrency.spawn]]
+text = "spawn("
+
+[[patterns.concurrency.spawn]]
+text = "Task.start("
+
+[[patterns.concurrency.join]]
+text = "Task.await("
+
+[[patterns.concurrency.join]]
+text = "Task.yield("
+
+[patterns.locking]

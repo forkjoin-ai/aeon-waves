@@ -1,0 +1,3 @@
+// metacog_halogram_bridge.gg — Halogram Memory Bridge
+
+(current_context: Context)-[:PROCESS]->(senju_whispers: DB)-[:PROCESS]->(holographic_projection: UI)

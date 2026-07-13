@@ -1,0 +1,4 @@
+// pensieve_offline_sync.gg — Pensieve Offline Repository Sync
+
+(local_mutation: Event)-[:FORK]->(indexeddb: Storage | remote_queue: Queue)
+(remote_queue)-[:PROCESS]->(d1_database: DB)

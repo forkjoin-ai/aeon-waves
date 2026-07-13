@@ -1,0 +1,23 @@
+// EffectSystem.gg -- Buleyean proof topology
+// Converted from EffectSystem.tla (auto-generated)
+
+(theorem: Theorem { bules: '0', proposition: 'EffectSystem' })
+
+(effects: Axiom { bules: '0', proposition: 'Effects is given' })
+(set_of_all_effect_kinds: Axiom { bules: '0', proposition: '\* Set of all effect kinds is given' })
+(agnosticsupported: Axiom { bules: '0', proposition: 'AgnosticSupported is given' })
+(effects_supported_on_agnostic_target: Axiom { bules: '0', proposition: '\* Effects supported on agnostic target is given' })
+(nodesupported: Axiom { bules: '0', proposition: 'NodeSupported is given' })
+(effects_supported_on_node_target: Axiom { bules: '0', proposition: '\* Effects supported on node target is given' })
+(workerssupported_effects_supported_on_workers_target: Axiom { bules: '0', proposition: 'WorkersSupported    \* Effects supported on workers target is given' })
+
+(declaredeffects: Hypothesis { bules: '0', proposition: 'declaredEffects is well-defined' })
+(effects_declared_by_current_topology: Hypothesis { bules: '0', proposition: '\* Effects declared by current topology is well-defined' })
+(inferredeffects: Hypothesis { bules: '0', proposition: 'inferredEffects is well-defined' })
+(effects_inferred_from_labels_properties: Hypothesis { bules: '0', proposition: '\* Effects inferred from labels/properties is well-defined' })
+(target: Hypothesis { bules: '0', proposition: 'target is well-defined' })
+(current_deployment_target: Hypothesis { bules: '0', proposition: '\* Current deployment target is well-defined' })
+(validationpassed_whether_validation_succeeded: Hypothesis { bules: '0', proposition: 'validationPassed    \* Whether validation succeeded is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

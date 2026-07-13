@@ -1,0 +1,69 @@
+// encoder.mgg — Transformer Encoder Stack
+//
+// 6 layers of self-attention + FFN.
+// Each layer's output feeds the next layer's input.
+// The encoder produces contextualized representations.
+//
+// Total β₁ = 6 × 7 = 42 (from 6 layers × 8-head attention)
+// Not a coincidence.
+
+import { layer_input, layer_out } from './layer.mgg'
+
+// Embedding: token + position
+(tokens: Embedding { vocab: '50257', dim: '512' })
+(positions: Positional { type: 'sinusoidal', max_len: '2048' })
+(tokens | positions)-[:INTERFERE { mode: 'constructive' }]->(embedded)
+
+// Scale embeddings by sqrt(d_model)
+(embedded)-[:PROCESS]->(scaled: Scale { factor: '22.627' })
+(scaled)-[:PROCESS]->(dropout_in: Dropout { rate: '0.1' })
+
+// Layer 0
+(dropout_in)-[:PROCESS]->(layer_input)
+(layer_out)-[:PROCESS]->(l0_out: Tensor)
+
+// Layer 1
+(l0_out)-[:PROCESS]->(l1_in: Tensor)-[:PROCESS]->(l1_norm: MeanVariance { eps: '1e-5' })
+(l1_norm)-[:PROCESS]->(l1_attn: Attention { heads: '8' })
+(l0_out | l1_attn)-[:INTERFERE { mode: 'constructive' }]->(l1_res: Tensor)
+(l1_res)-[:PROCESS]->(l1_ffn_norm: MeanVariance { eps: '1e-5' })
+(l1_ffn_norm)-[:PROCESS]->(l1_ffn: Network { hidden: '2048' })
+(l1_res | l1_ffn)-[:INTERFERE { mode: 'constructive' }]->(l1_out: Tensor)
+
+// Layer 2
+(l1_out)-[:PROCESS]->(l2_norm: MeanVariance { eps: '1e-5' })
+(l2_norm)-[:PROCESS]->(l2_attn: Attention { heads: '8' })
+(l1_out | l2_attn)-[:INTERFERE { mode: 'constructive' }]->(l2_res: Tensor)
+(l2_res)-[:PROCESS]->(l2_ffn_norm: MeanVariance { eps: '1e-5' })
+(l2_ffn_norm)-[:PROCESS]->(l2_ffn: Network { hidden: '2048' })
+(l2_res | l2_ffn)-[:INTERFERE { mode: 'constructive' }]->(l2_out: Tensor)
+
+// Layer 3
+(l2_out)-[:PROCESS]->(l3_norm: MeanVariance { eps: '1e-5' })
+(l3_norm)-[:PROCESS]->(l3_attn: Attention { heads: '8' })
+(l2_out | l3_attn)-[:INTERFERE { mode: 'constructive' }]->(l3_res: Tensor)
+(l3_res)-[:PROCESS]->(l3_ffn_norm: MeanVariance { eps: '1e-5' })
+(l3_ffn_norm)-[:PROCESS]->(l3_ffn: Network { hidden: '2048' })
+(l3_res | l3_ffn)-[:INTERFERE { mode: 'constructive' }]->(l3_out: Tensor)
+
+// Layer 4
+(l3_out)-[:PROCESS]->(l4_norm: MeanVariance { eps: '1e-5' })
+(l4_norm)-[:PROCESS]->(l4_attn: Attention { heads: '8' })
+(l3_out | l4_attn)-[:INTERFERE { mode: 'constructive' }]->(l4_res: Tensor)
+(l4_res)-[:PROCESS]->(l4_ffn_norm: MeanVariance { eps: '1e-5' })
+(l4_ffn_norm)-[:PROCESS]->(l4_ffn: Network { hidden: '2048' })
+(l4_res | l4_ffn)-[:INTERFERE { mode: 'constructive' }]->(l4_out: Tensor)
+
+// Layer 5
+(l4_out)-[:PROCESS]->(l5_norm: MeanVariance { eps: '1e-5' })
+(l5_norm)-[:PROCESS]->(l5_attn: Attention { heads: '8' })
+(l4_out | l5_attn)-[:INTERFERE { mode: 'constructive' }]->(l5_res: Tensor)
+(l5_res)-[:PROCESS]->(l5_ffn_norm: MeanVariance { eps: '1e-5' })
+(l5_ffn_norm)-[:PROCESS]->(l5_ffn: Network { hidden: '2048' })
+(l5_res | l5_ffn)-[:INTERFERE { mode: 'constructive' }]->(l5_out: Tensor)
+
+// Final layer norm
+(l5_out)-[:PROCESS]->(final_norm: MeanVariance { eps: '1e-5' })
+(final_norm)-[:PROCESS]->(encoder_out)
+
+export { tokens, positions, encoder_out }

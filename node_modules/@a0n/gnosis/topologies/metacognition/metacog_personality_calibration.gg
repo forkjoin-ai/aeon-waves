@@ -1,0 +1,3 @@
+// metacog_personality_calibration.gg — Personality Calibration Layers
+
+(base_traits: Profile)-[:PROCESS]->(c1_confidence: Logic)-[:PROCESS]->(c2_coherence: Logic)-[:PROCESS]->(c3_bias_check: Logic)

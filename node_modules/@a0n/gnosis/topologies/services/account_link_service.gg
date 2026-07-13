@@ -1,0 +1,3 @@
+// account_link_service.gg — Account linking service flow
+
+(req: LinkAccount)-[:PROCESS]->(verify_identity: Check)-[:PROCESS]->(create_link: DB)

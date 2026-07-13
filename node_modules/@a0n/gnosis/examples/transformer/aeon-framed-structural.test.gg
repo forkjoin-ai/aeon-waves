@@ -1,0 +1,8 @@
+// aeon-framed-structural.test.gg
+// Verifies the companion Rotation and Whip transformer topologies.
+
+(test_suite: TestSuite { name: 'aeon-framed-transformer-structural' })
+(rotation_encoder: Verify { module: './aeon-framed-encoder-stack.gg', beta1_max: '8' })
+(router_swarm: Verify { module: './aeon-framed-router-swarm.gg', beta1_max: '8' })
+
+(test_suite)-[:OBSERVE]->(rotation_encoder | router_swarm)

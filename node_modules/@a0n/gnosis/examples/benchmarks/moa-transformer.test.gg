@@ -1,0 +1,8 @@
+// moa-transformer.test.gg
+// Verifies the regular and sparse MoA transformer benchmark modules.
+
+(test_suite: TestSuite { name: 'moa-transformer-shootout' })
+(regular_dense: Verify { module: './moa-transformer-regular.gg', beta1_max: '24' })
+(sparse_moa: Verify { module: './moa-transformer-moa.gg', beta1_max: '24' })
+
+(test_suite)-[:OBSERVE]->(regular_dense | sparse_moa)

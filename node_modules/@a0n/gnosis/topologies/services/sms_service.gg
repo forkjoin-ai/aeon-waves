@@ -1,0 +1,3 @@
+// sms_service.gg — SMS sending service
+
+(sms_request: Message)-[:PROCESS]->(sms_gateway: Network)-[:PROCESS]->(send_sms: SMS)

@@ -1,0 +1,3 @@
+// neural_optimal_self.gg — Optimal Self Neural Model
+
+(current_state: State)-[:PROCESS]->(optimal_self_model: ONNX)-[:PROCESS]->(growth_vector: Vector)

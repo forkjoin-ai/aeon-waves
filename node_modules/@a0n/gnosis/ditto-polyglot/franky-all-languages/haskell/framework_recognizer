@@ -1,0 +1,15 @@
+# Implements topology node 'as_str'
+# Topology node: as_str
+# Language: haskell
+# TODO: implement
+
+# Implements topology node 'all_recognizers'
+# Topology node: all_recognizers
+# Language: haskell
+# TODO: implement
+
+# Implements topology node 'detect_framework'
+# Topology node: detect_framework
+# Language: haskell
+# TODO: implement
+

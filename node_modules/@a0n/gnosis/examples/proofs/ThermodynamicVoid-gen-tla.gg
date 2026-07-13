@@ -1,0 +1,23 @@
+// ThermodynamicVoid.gg -- Buleyean proof topology
+// Converted from ThermodynamicVoid.tla (auto-generated)
+
+(theorem: Theorem { bules: '0', proposition: 'ThermodynamicVoid' })
+
+(numdimensions: Axiom { bules: '0', proposition: 'NumDimensions is given' })
+(number_of_void_boundary_dimensions: Axiom { bules: '0', proposition: '\* Number of void boundary dimensions is given' })
+(beta_inverse_temperature_eta: Axiom { bules: '0', proposition: 'Beta            \* Inverse temperature (= eta) is given' })
+
+(counts: Hypothesis { bules: '0', proposition: 'counts is well-defined' })
+(void_boundary_per_dimension_rejection_counts: Hypothesis { bules: '0', proposition: '\* Void boundary: per-dimension rejection counts is well-defined' })
+(totalentries: Hypothesis { bules: '0', proposition: 'totalEntries is well-defined' })
+(sum_of_all_counts: Hypothesis { bules: '0', proposition: '\* Sum of all counts is well-defined' })
+(dissipatedwork: Hypothesis { bules: '0', proposition: 'dissipatedWork is well-defined' })
+(total_work_dissipated_by_erasures: Hypothesis { bules: '0', proposition: '\* Total work dissipated by erasures is well-defined' })
+(entropyproduction: Hypothesis { bules: '0', proposition: 'entropyProduction is well-defined' })
+(total_entropy_produced: Hypothesis { bules: '0', proposition: '\* Total entropy produced is well-defined' })
+(erasurecount: Hypothesis { bules: '0', proposition: 'erasureCount is well-defined' })
+(number_of_vent_operations: Hypothesis { bules: '0', proposition: '\* Number of VENT operations is well-defined' })
+(phasespacedims_current_number_of_dimensions_may_grow_with_fork: Hypothesis { bules: '0', proposition: 'phaseSpaceDims       \* Current number of dimensions (may grow with FORK) is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

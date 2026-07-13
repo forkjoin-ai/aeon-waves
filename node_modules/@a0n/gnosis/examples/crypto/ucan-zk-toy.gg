@@ -1,0 +1,13 @@
+// ucan-zk-toy.gg -- toy reduced-strength UCAN/ZK calibration surface
+
+(identity: UCANIdentity { effects: 'auth.ucan' })
+(issue: UCANIssue { can: 'aeon/*', with: '*', effects: 'auth.ucan' })
+(delegate: UCANDelegate { can: 'aeon/*', with: '*', attenuate: 'false', effects: 'auth.ucan' })
+(require: UCANRequire { can: 'aeon/*', with: '*', effects: 'auth.ucan' })
+(nonce: Nonce { reuse: 'true' })
+(gate: ZKExecutionGate { requireProofVerification: 'false', effects: 'auth.zk' })
+(toy_proof: Proof { toy: 'true', algorithm: 'toy-32' })
+(sync: ZKSyncEnvelope { zkMode: 'off', crossTenant: 'true', effects: 'auth.zk' })
+(result: Result { kind: 'ok' })
+
+(identity)-[:PROCESS]->(issue)-[:PROCESS]->(delegate)-[:PROCESS]->(require)-[:PROCESS]->(nonce)-[:PROCESS]->(gate)-[:PROCESS]->(toy_proof)-[:PROCESS]->(sync)-[:PROCESS]->(result)

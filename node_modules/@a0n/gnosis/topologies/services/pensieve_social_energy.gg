@@ -1,0 +1,3 @@
+// pensieve_social_energy.gg — Social Energy Tracking
+
+(interaction: Event)-[:PROCESS]->(energy_calculator: Logic)-[:PROCESS]->(social_battery: Metric)

@@ -1,0 +1,9 @@
+// aeon-framed-transformer.test.gg
+// Parameter-matched framed transformer benchmark modules differ only in FOLD strategy.
+
+(test_suite: TestSuite { name: 'aeon-framed-transformer-benchmark' })
+(linear_fold: Verify { module: './aeon-framed-transformer-linear.gg', beta1_max: '8' })
+(winner_fold: Verify { module: './aeon-framed-transformer-winner-take-all.gg', beta1_max: '8' })
+(early_fold: Verify { module: './aeon-framed-transformer-early-stop.gg', beta1_max: '8' })
+
+(test_suite)-[:OBSERVE]->(linear_fold | winner_fold | early_fold)

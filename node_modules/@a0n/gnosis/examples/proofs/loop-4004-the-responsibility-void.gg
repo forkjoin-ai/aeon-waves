@@ -1,0 +1,12 @@
+// BehaviorLoop_4004_the_responsibility_void.gg -- Buleyean proof topology
+// Converted from BehaviorLoop_4004_the_responsibility_void.tla
+
+(theorem: Theorem { bules: '0', proposition: 'BehaviorLoop_4004_the_responsibility_void' })
+
+(active: Hypothesis { bules: '0', proposition: 'active is well-defined' })
+(beta1: Hypothesis { bules: '0', proposition: 'beta1 is well-defined' })
+(payloadpresent: Hypothesis { bules: '0', proposition: 'payloadPresent is well-defined' })
+(consensusreached: Hypothesis { bules: '0', proposition: 'consensusReached is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

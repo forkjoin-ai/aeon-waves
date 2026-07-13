@@ -1,0 +1,3 @@
+// permission_audit_log.gg — Permission audit logging
+
+(action: Event)-[:PROCESS]->(log_permission: Audit)-[:PROCESS]->(store_audit: DB)

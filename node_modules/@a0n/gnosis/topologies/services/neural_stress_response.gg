@@ -1,0 +1,3 @@
+// neural_stress_response.gg — Stress Response Modeling
+
+(biometrics: Data)-[:PROCESS]->(stress_model: ML)-[:PROCESS]->(intervention_plan: Strategy)

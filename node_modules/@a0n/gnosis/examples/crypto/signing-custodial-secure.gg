@@ -1,0 +1,9 @@
+// signing-custodial-secure.gg -- bounded custodial signing flow
+
+(request: Request)
+(require: UCANRequire { can: 'halos.signDisclosure', with: 'aeon://sign/disclosure-1', effects: 'auth.ucan' })
+(signer: CustodialSigner { action: 'halos.signDisclosure', effects: 'auth.custodial' })
+(proof: Proof { verified: 'true' })
+(receipt: Receipt)
+
+(request)-[:PROCESS]->(require)-[:PROCESS]->(signer)-[:PROCESS]->(proof)-[:PROCESS]->(receipt)

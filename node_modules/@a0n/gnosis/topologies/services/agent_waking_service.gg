@@ -1,0 +1,3 @@
+// agent_waking_service.gg — Agent waking service
+
+(ping: Signal)-[:PROCESS]->(check_sleep: Logic)-[:PROCESS]->(boot_container: Process)

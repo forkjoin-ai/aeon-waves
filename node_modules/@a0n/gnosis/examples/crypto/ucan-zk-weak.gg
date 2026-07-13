@@ -1,0 +1,11 @@
+// ucan-zk-weak.gg -- wildcard delegation and downgraded ZK policy
+
+(identity: UCANIdentity { effects: 'auth.ucan' })
+(issue: UCANIssue { can: 'aeon/*', with: '*', effects: 'auth.ucan' })
+(delegate: UCANDelegate { can: 'aeon/*', with: '*', attenuate: 'false', effects: 'auth.ucan' })
+(require: UCANRequire { can: 'aeon/*', with: '*', effects: 'auth.ucan' })
+(nonce: Nonce { reuse: 'true' })
+(sync: ZKSyncEnvelope { zkMode: 'preferred', crossTenant: 'true', effects: 'auth.zk' })
+(result: Result { kind: 'ok' })
+
+(identity)-[:PROCESS]->(issue)-[:PROCESS]->(delegate)-[:PROCESS]->(require)-[:PROCESS]->(nonce)-[:PROCESS]->(sync)-[:PROCESS]->(result)

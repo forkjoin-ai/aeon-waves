@@ -1,0 +1,20 @@
+// CollapseStrategies.gg -- Buleyean proof topology
+// Converted from CollapseStrategies.tla
+
+(theorem: Theorem { bules: '0', proposition: 'CollapseStrategies' })
+
+(values: Axiom { bules: '0', proposition: 'Values is given' })
+(alice: Axiom { bules: '0', proposition: '{"alice" is given' })
+(bob: Axiom { bules: '0', proposition: '"bob" is given' })
+(charlie: Axiom { bules: '0', proposition: '"charlie"}) is given' })
+(timestamps: Axiom { bules: '0', proposition: 'Timestamps is given' })
+(1_10: Axiom { bules: '0', proposition: '1..10) is given' })
+
+(writes: Hypothesis { bules: '0', proposition: 'writes is well-defined' })
+(timestamp_pairs: Hypothesis { bules: '0', proposition: 'timestamp>> pairs is well-defined' })
+(result: Hypothesis { bules: '0', proposition: 'result is well-defined' })
+(strategy: Hypothesis { bules: '0', proposition: 'strategy is well-defined' })
+(resolved_has_the_strategy_been_applied: Hypothesis { bules: '0', proposition: 'resolved        \* Has the strategy been applied? is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

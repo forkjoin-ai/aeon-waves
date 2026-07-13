@@ -1,0 +1,21 @@
+// VoidWalkerRuntimeTLC.gg -- Buleyean proof topology
+// Converted from VoidWalkerRuntimeTLC.tla
+
+(theorem: Theorem { bules: '0', proposition: 'VoidWalkerRuntimeTLC' })
+
+(reqstate: Hypothesis { bules: '0', proposition: 'reqState is well-defined' })
+(active: Hypothesis { bules: '0', proposition: 'active is well-defined' })
+(waiters: Hypothesis { bules: '0', proposition: 'waiters is well-defined' })
+(accepted: Hypothesis { bules: '0', proposition: 'accepted is well-defined' })
+(winner: Hypothesis { bules: '0', proposition: 'winner is well-defined' })
+(corridorstate: Hypothesis { bules: '0', proposition: 'corridorState is well-defined' })
+(corridorvalue: Hypothesis { bules: '0', proposition: 'corridorValue is well-defined' })
+(evidence: Hypothesis { bules: '0', proposition: 'evidence is well-defined' })
+(repair: Hypothesis { bules: '0', proposition: 'repair is well-defined' })
+(vented: Hypothesis { bules: '0', proposition: 'vented is well-defined' })
+(ventcount: Hypothesis { bules: '0', proposition: 'ventCount is well-defined' })
+(tunnelhits: Hypothesis { bules: '0', proposition: 'tunnelHits is well-defined' })
+(repairdebt: Hypothesis { bules: '0', proposition: 'repairDebt is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

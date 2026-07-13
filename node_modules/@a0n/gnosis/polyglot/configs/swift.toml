@@ -1,0 +1,74 @@
+[language]
+id = "swift"
+grammar = "swift"
+extensions = [".swift"]
+name = "Swift"
+
+[patterns.function]
+node_types = ["function_declaration"]
+name_field = "name"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if_statement"
+consequence_field = "consequence"
+alternative_field = "alternative"
+
+[patterns.branch.switch_pattern]
+node_type = "switch_statement"
+body_field = "body"
+case_types = ["switch_entry"]
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "repeat_while_statement"
+body_field = "body"
+
+[patterns.error_handling]
+[patterns.error_handling.try_pattern]
+try_type = "do_statement"
+body_field = "body"
+catch_type = "catch_clause"
+catch_body_field = "body"
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "FileHandle("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "URLSession("
+kind = "Connection"
+
+[[patterns.resource.release]]
+text = ".closeFile()"
+kind = "File"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "Task {"
+
+[[patterns.concurrency.spawn]]
+text = "Task.detached"
+
+[[patterns.concurrency.spawn]]
+text = "DispatchQueue"
+
+[[patterns.concurrency.join]]
+text = "await "
+
+[patterns.locking]
+[[patterns.locking.acquire]]
+text = ".lock()"
+
+[[patterns.locking.release]]
+text = ".unlock()"

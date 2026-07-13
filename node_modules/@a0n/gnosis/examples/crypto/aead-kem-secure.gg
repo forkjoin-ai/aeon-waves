@@ -1,0 +1,12 @@
+// aead-kem-secure.gg -- bounded AEAD/KEM-style message confidentiality flow
+
+(secret: Secret)
+(kdf: KDF)
+(session: SessionKey { bindsIdentity: 'true' })
+(nonce: Nonce { reuse: 'false' })
+(encrypt: Encrypt { algorithm: 'aes-256-gcm' })
+(envelope: Envelope { replayGuard: 'true' })
+(proof: Proof { verified: 'true' })
+(cipher: Blob)
+
+(secret)-[:PROCESS]->(kdf)-[:PROCESS]->(session)-[:PROCESS]->(nonce)-[:PROCESS]->(encrypt)-[:PROCESS]->(envelope)-[:PROCESS]->(proof)-[:PROCESS]->(cipher)

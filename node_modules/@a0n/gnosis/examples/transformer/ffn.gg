@@ -1,0 +1,16 @@
+// ffn.gg — Feed-Forward Network
+//
+// The FFN is pure PROCESS — no superposition.
+// Two linear transforms with a nonlinearity between them.
+// This is the "thinking" step: attention gathered information,
+// FFN transforms it.
+//
+// β₁ = 0 (sequential, no cycles)
+
+(ffn_input: Tensor)
+(expand: Linear { dim: '2048', bias: 'true' })
+(activate: GeLU)
+(contract: Linear { dim: '512', bias: 'true' })
+(dropout: Dropout { rate: '0.1' })
+
+(ffn_input)-[:PROCESS]->(expand)-[:PROCESS]->(activate)-[:PROCESS]->(contract)-[:PROCESS]->(dropout)-[:PROCESS]->(ffn_out)

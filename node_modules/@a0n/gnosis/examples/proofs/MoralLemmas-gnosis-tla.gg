@@ -1,0 +1,30 @@
+// MoralLemmas.gg -- Buleyean proof topology
+// Converted from MoralLemmas.tla
+
+(theorem: Theorem { bules: '0', proposition: 'MoralLemmas' })
+
+(maxrounds: Axiom { bules: '0', proposition: 'MaxRounds is given' })
+(cooperatecooperate: Axiom { bules: '0', proposition: 'CooperateCooperate is given' })
+(cooperatedefect: Axiom { bules: '0', proposition: 'CooperateDefect is given' })
+(defectcooperate: Axiom { bules: '0', proposition: 'DefectCooperate is given' })
+(defectdefect: Axiom { bules: '0', proposition: 'DefectDefect is given' })
+
+(player1_action: Hypothesis { bules: '0', proposition: 'player1_action is well-defined' })
+(1_defect: Hypothesis { bules: '0', proposition: '1 = defect is well-defined' })
+(player2_action: Hypothesis { bules: '0', proposition: 'player2_action is well-defined' })
+(1_defect: Hypothesis { bules: '0', proposition: '1 = defect is well-defined' })
+(player1_score: Hypothesis { bules: '0', proposition: 'player1_score is well-defined' })
+(player2_score: Hypothesis { bules: '0', proposition: 'player2_score is well-defined' })
+(player1_prev: Hypothesis { bules: '0', proposition: 'player1_prev is well-defined' })
+(player2_prev: Hypothesis { bules: '0', proposition: 'player2_prev is well-defined' })
+(round: Hypothesis { bules: '0', proposition: 'round is well-defined' })
+(forgiveness_count: Hypothesis { bules: '0', proposition: 'forgiveness_count is well-defined' })
+(cooperation_streak: Hypothesis { bules: '0', proposition: 'cooperation_streak is well-defined' })
+(pc_program_counter_fork: Hypothesis { bules: '0', proposition: 'pc                      \* Program counter: "Fork" is well-defined' })
+(race: Hypothesis { bules: '0', proposition: '"Race" is well-defined' })
+(fold: Hypothesis { bules: '0', proposition: '"Fold" is well-defined' })
+(interfere: Hypothesis { bules: '0', proposition: '"Interfere" is well-defined' })
+(done: Hypothesis { bules: '0', proposition: '"Done" is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

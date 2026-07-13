@@ -1,0 +1,40 @@
+-- Implements topology node 'compile_framework_to_gg'
+--
+-- Topology node: compile_framework_to_gg
+-- Labels: Statement, PolyglotBridgeCall
+
+function compile_framework_to_gg(input_data)
+  -- TODO: implement
+  return input_data
+end
+
+-- Implements topology node 'group_routes_by_path'
+--
+-- Topology node: group_routes_by_path
+-- Labels: Statement, PolyglotBridgeCall
+
+function group_routes_by_path(input_data)
+  -- TODO: implement
+  return input_data
+end
+
+-- Implements topology node 'escape_gg_string'
+--
+-- Topology node: escape_gg_string
+-- Labels: Statement, PolyglotBridgeCall
+
+function escape_gg_string(input_data)
+  -- TODO: implement
+  return input_data
+end
+
+-- Implements topology node 'compile_ditto_self_hosting'
+--
+-- Topology node: compile_ditto_self_hosting
+-- Labels: Statement, PolyglotBridgeCall
+
+function compile_ditto_self_hosting(input_data)
+  -- TODO: implement
+  return input_data
+end
+

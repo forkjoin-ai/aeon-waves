@@ -1,0 +1,40 @@
+# Implements topology node 'framework_id'
+# Topology node: framework_id
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'language'
+# Topology node: language
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'detect'
+# Topology node: detect
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'detect_router_names'
+# Topology node: detect_router_names
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'extract_go_handler'
+# Topology node: extract_go_handler
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'extract_string_arg'
+# Topology node: extract_string_arg
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'detect_gin_port'
+# Topology node: detect_gin_port
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'sanitize_path'
+# Topology node: sanitize_path
+# Language: zig
+# TODO: implement
+

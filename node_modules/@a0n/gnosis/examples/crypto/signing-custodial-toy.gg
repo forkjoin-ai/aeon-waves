@@ -1,0 +1,9 @@
+// signing-custodial-toy.gg -- toy reduced-strength custodial signer
+
+(request: Request)
+(delegate: UCANDelegate { can: 'halos.*', with: '*', attenuate: 'false', effects: 'auth.ucan' })
+(require: UCANRequire { can: 'halos.*', with: '*', effects: 'auth.ucan' })
+(signer: CustodialSigner { action: '*', effects: 'auth.custodial', toy: 'true', algorithm: 'toy-ed25519-32' })
+(receipt: Receipt)
+
+(request)-[:PROCESS]->(delegate)-[:PROCESS]->(require)-[:PROCESS]->(signer)-[:PROCESS]->(receipt)

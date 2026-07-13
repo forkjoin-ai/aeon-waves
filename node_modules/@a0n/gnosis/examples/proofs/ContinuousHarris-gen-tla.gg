@@ -1,0 +1,27 @@
+// ContinuousHarris.gg -- Buleyean proof topology
+// Converted from ContinuousHarris.tla (auto-generated)
+
+(theorem: Theorem { bules: '0', proposition: 'ContinuousHarris' })
+
+(numnodes: Axiom { bules: '0', proposition: 'NumNodes is given' })
+(number_of_state_nodes: Axiom { bules: '0', proposition: '\* Number of state nodes is given' })
+(maxdriftgap_maximum_drift_gap_parameter: Axiom { bules: '0', proposition: 'MaxDriftGap     \* Maximum drift gap parameter is given' })
+
+(observableinferred: Hypothesis { bules: '0', proposition: 'observableInferred is well-defined' })
+(whether_observable_has_been_inferred: Hypothesis { bules: '0', proposition: '\* Whether observable has been inferred is well-defined' })
+(smallsetsynthesized: Hypothesis { bules: '0', proposition: 'smallSetSynthesized is well-defined' })
+(whether_small_set_has_been_synthesized: Hypothesis { bules: '0', proposition: '\* Whether small set has been synthesized is well-defined' })
+(lyapunovsynthesized: Hypothesis { bules: '0', proposition: 'lyapunovSynthesized is well-defined' })
+(whether_lyapunov_function_has_been_synthesized: Hypothesis { bules: '0', proposition: '\* Whether Lyapunov function has been synthesized is well-defined' })
+(minorizationsynthesized: Hypothesis { bules: '0', proposition: 'minorizationSynthesized is well-defined' })
+(whether_minorization_has_been_synthesized: Hypothesis { bules: '0', proposition: '\* Whether minorization has been synthesized is well-defined' })
+(certificatecomplete: Hypothesis { bules: '0', proposition: 'certificateComplete is well-defined' })
+(whether_full_certificate_is_assembled: Hypothesis { bules: '0', proposition: '\* Whether full certificate is assembled is well-defined' })
+(lambda: Hypothesis { bules: '0', proposition: 'lambda is well-defined' })
+(drift_contraction_rate_must_be_1: Hypothesis { bules: '0', proposition: '\* Drift contraction rate (must be < 1) is well-defined' })
+(epsilon: Hypothesis { bules: '0', proposition: 'epsilon is well-defined' })
+(minorization_constant_must_be_0: Hypothesis { bules: '0', proposition: '\* Minorization constant (must be > 0) is well-defined' })
+(verified_whether_certificate_has_been_verified: Hypothesis { bules: '0', proposition: 'verified                \* Whether certificate has been verified is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

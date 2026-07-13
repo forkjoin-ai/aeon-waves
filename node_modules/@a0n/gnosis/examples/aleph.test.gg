@@ -1,0 +1,19 @@
+// aleph.test.gg -- Verify Aleph sufficient statistic node
+// Phase 7: Aleph captures full void boundary state
+
+(test_suite:TestSuite { name: 'aleph' })
+
+(source:Source { void_density: '1.0' })
+(source)-[:FORK]->(a | b | c)
+
+// Race to produce void evidence
+(a | b | c)-[:RACE]->(winner:Result)
+
+// Measure
+(winner)-[:MEASURE]->(metrics)
+
+// Aleph captures full state
+(metrics)-[:PROCESS]->(aleph:Aleph)
+
+// Aleph should have all upstream void data
+(aleph)-[:PROCESS]->(sink:Sink)

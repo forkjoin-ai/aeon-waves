@@ -1,0 +1,3 @@
+// metacog_ombuds_mode.gg — Ombudsman Conflict Resolution
+
+(conflict_detected: Alert)-[:PROCESS]->(ombuds_engine: Logic)-[:PROCESS]->(mediation_strategy: Plan)

@@ -1,0 +1,9 @@
+// ForkRaceFoldTheorems.gg -- Buleyean proof topology
+// Converted from Lean 4 theorems
+
+(theorem: Theorem { bules: '0', proposition: 'ForkRaceFoldTheorems' })
+
+(runtimewitness: Hypothesis { bules: '0', proposition: 'RuntimeWitness is well-typed' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

@@ -1,0 +1,3 @@
+// firestore_client.gg — Firestore database interaction
+
+(request: Query)-[:PROCESS]->(firestore_api: DB)-[:PROCESS]->(results: Data)

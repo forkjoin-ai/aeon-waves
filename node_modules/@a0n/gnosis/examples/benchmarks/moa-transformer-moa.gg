@@ -1,0 +1,8 @@
+// moa-transformer-moa.gg — sparse rotated MoA transformer collapsed onto the
+// StructuredMoA primitive. The primitive lowers into the same nested
+// Rotation/FORK/FOLD graph as the handwritten benchmark topology.
+
+(frame_in: FlowFrame { role: 'token-frame' })
+(moa_out: StructuredMoA { blocks: '4', activeBlocks: '2', heads: '4', activeHeads: '2', stages: '4', chunks: '2', parameters: '18', headParameters: '4', innerFoldStrategy: 'linear', outerFoldStrategy: 'linear', outputLabel: 'Tensor', family: 'moa', blockNames: '[x_pos,x_neg,y_pos,y_neg]' })
+
+(frame_in)-[:PROCESS]->(moa_out)

@@ -1,0 +1,67 @@
+[language]
+id = "haskell"
+grammar = "haskell"
+extensions = [".hs", ".lhs"]
+name = "Haskell"
+
+[patterns.function]
+node_types = ["function"]
+name_field = "name"
+body_field = "match"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "conditional"
+consequence_field = "then"
+alternative_field = "else"
+
+[patterns.branch.match_pattern]
+node_type = "case"
+body_field = "alternatives"
+arm_type = "alternative"
+always_exhaustive = true
+
+[patterns.loop]
+# Haskell uses recursion, not loops.
+
+[patterns.error_handling]
+# Haskell uses Either/Maybe, not try/catch.
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "openFile"
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "openBinaryFile"
+kind = "File"
+
+[[patterns.resource.release]]
+text = "hClose"
+kind = "File"
+
+# bracket is Haskell's scoped resource pattern.
+[[patterns.resource.scoped]]
+node_type = "apply"
+body_field = "argument"
+kind = "bracket"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "forkIO"
+
+[[patterns.concurrency.spawn]]
+text = "async"
+
+[[patterns.concurrency.join]]
+text = "wait"
+
+[[patterns.concurrency.join]]
+text = "takeMVar"
+
+[patterns.locking]
+[[patterns.locking.acquire]]
+text = "takeMVar"
+
+[[patterns.locking.release]]
+text = "putMVar"

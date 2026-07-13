@@ -1,0 +1,25 @@
+# Implements topology node 'framework_id'
+# Topology node: framework_id
+# Language: elixir
+# TODO: implement
+
+# Implements topology node 'language'
+# Topology node: language
+# Language: elixir
+# TODO: implement
+
+# Implements topology node 'detect'
+# Topology node: detect
+# Language: elixir
+# TODO: implement
+
+# Implements topology node 'extract_ruby_string'
+# Topology node: extract_ruby_string
+# Language: elixir
+# TODO: implement
+
+# Implements topology node 'sanitize_path'
+# Topology node: sanitize_path
+# Language: elixir
+# TODO: implement
+

@@ -1,0 +1,15 @@
+// TracedMonoidalCategory.gg -- Buleyean proof topology
+// Converted from TracedMonoidalCategory.tla (auto-generated)
+
+(theorem: Theorem { bules: '0', proposition: 'TracedMonoidalCategory' })
+
+(maxdimensions_upper_bound_on_dimension_count_for_model_checking: Axiom { bules: '0', proposition: 'MaxDimensions   \* Upper bound on dimension count for model checking is given' })
+
+(beta1: Hypothesis { bules: '0', proposition: 'beta1 is well-defined' })
+(current_first_betti_number: Hypothesis { bules: '0', proposition: '\* Current first Betti number is well-defined' })
+(dims: Hypothesis { bules: '0', proposition: 'dims is well-defined' })
+(current_dimension_count: Hypothesis { bules: '0', proposition: '\* Current dimension count is well-defined' })
+(morphismcount_number_of_morphisms_applied: Hypothesis { bules: '0', proposition: 'morphismCount   \* Number of morphisms applied is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

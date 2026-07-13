@@ -1,0 +1,3 @@
+// core_generative_ui.gg — Generative UI Service
+
+(intent: Intent)-[:PROCESS]->(react_server_components: System)-[:PROCESS]->(dynamic_layout: DOM)

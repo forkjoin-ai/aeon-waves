@@ -1,0 +1,3 @@
+// pensieve_ucan_protection.gg — Pensieve UCAN Protection Gate
+
+(memory_request: Intent)-[:PROCESS]->(ucan_validator: Logic)-[:PROCESS]->(decrypted_memory: Data)

@@ -1,0 +1,136 @@
+/**
+ * Implements topology node 'framework_id'
+ *
+ * Topology node: framework_id
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class FrameworkId {
+    public static Object frameworkId(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'language'
+ *
+ * Topology node: language
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class Language {
+    public static Object language(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'detect'
+ *
+ * Topology node: detect
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class Detect {
+    public static Object detect(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'detect_router_names'
+ *
+ * Topology node: detect_router_names
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class DetectRouterNames {
+    public static Object detectRouterNames(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'extract_go_handler'
+ *
+ * Topology node: extract_go_handler
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class ExtractGoHandler {
+    public static Object extractGoHandler(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'extract_string_arg'
+ *
+ * Topology node: extract_string_arg
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class ExtractStringArg {
+    public static Object extractStringArg(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'detect_gin_port'
+ *
+ * Topology node: detect_gin_port
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class DetectGinPort {
+    public static Object detectGinPort(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'sanitize_path'
+ *
+ * Topology node: sanitize_path
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class SanitizePath {
+    public static Object sanitizePath(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+

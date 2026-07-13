@@ -1,0 +1,48 @@
+/// Implements topology node 'compile_framework_to_gg'
+///
+/// Topology node: compile_framework_to_gg
+/// Labels: Statement, PolyglotBridgeCall
+
+import Foundation
+
+func compileFrameworkToGg(inputData: Any) -> Any {
+    // TODO: implement
+    return inputData
+}
+
+/// Implements topology node 'group_routes_by_path'
+///
+/// Topology node: group_routes_by_path
+/// Labels: Statement, PolyglotBridgeCall
+
+import Foundation
+
+func groupRoutesByPath(inputData: Any) -> Any {
+    // TODO: implement
+    return inputData
+}
+
+/// Implements topology node 'escape_gg_string'
+///
+/// Topology node: escape_gg_string
+/// Labels: Statement, PolyglotBridgeCall
+
+import Foundation
+
+func escapeGgString(inputData: Any) -> Any {
+    // TODO: implement
+    return inputData
+}
+
+/// Implements topology node 'compile_ditto_self_hosting'
+///
+/// Topology node: compile_ditto_self_hosting
+/// Labels: Statement, PolyglotBridgeCall
+
+import Foundation
+
+func compileDittoSelfHosting(inputData: Any) -> Any {
+    // TODO: implement
+    return inputData
+}
+

@@ -1,0 +1,22 @@
+// BrokenSystems.gg -- Buleyean proof topology
+// Converted from BrokenSystems.tla
+
+(theorem: Theorem { bules: '0', proposition: 'BrokenSystems' })
+
+(maxval: Axiom { bules: '0', proposition: 'MaxVal is given' })
+(maxentropy: Axiom { bules: '0', proposition: 'MaxEntropy is given' })
+(maxsteps: Axiom { bules: '0', proposition: 'MaxSteps is given' })
+(epsilon: Axiom { bules: '0', proposition: 'Epsilon is given' })
+
+(registers: Hypothesis { bules: '0', proposition: 'registers is well-defined' })
+(new: Hypothesis { bules: '0', proposition: 'new>> is well-defined' })
+(ratio: Hypothesis { bules: '0', proposition: 'ratio is well-defined' })
+(entropy: Hypothesis { bules: '0', proposition: 'entropy is well-defined' })
+(craving: Hypothesis { bules: '0', proposition: 'craving is well-defined' })
+(ventenabled: Hypothesis { bules: '0', proposition: 'ventEnabled is well-defined' })
+(ventpartial: Hypothesis { bules: '0', proposition: 'ventPartial is well-defined' })
+(step: Hypothesis { bules: '0', proposition: 'step is well-defined' })
+(pc_program_counter_which_operation_executes_next: Hypothesis { bules: '0', proposition: 'pc              \* Program counter: which operation executes next is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

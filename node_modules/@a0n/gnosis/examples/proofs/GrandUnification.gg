@@ -1,0 +1,8 @@
+// ForkRaceFoldTheorems.gg -- Buleyean proof topology
+// Converted from Lean 4 theorems
+// One theorem that composes the entire formal surface -- every major
+
+(theorem: Theorem { bules: '1', proposition: 'ForkRaceFoldTheorems' })
+
+(grand_unification: Lemma { bules: '0' })
+(theorem)-[:REJECT { reason: 'grand_unification proved in Lean 4' }]->(grand_unification)

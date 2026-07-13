@@ -1,0 +1,7 @@
+// 1. Defining Compute Nodes
+(raw_codec: Codec { type: 'raw' })
+(brotli_codec: Codec { type: 'brotli' })
+
+// 2. The Topology
+(input) -[:FORK]-> (raw_codec | brotli_codec)
+(raw_codec | brotli_codec) -[:RACE]-> (winner)

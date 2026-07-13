@@ -1,0 +1,58 @@
+[language]
+id = "lua"
+grammar = "lua"
+extensions = [".lua"]
+name = "Lua"
+
+[patterns.function]
+node_types = ["function_declaration", "local_function_declaration_statement"]
+name_field = "name"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if_statement"
+consequence_field = "consequence"
+alternative_field = "alternative"
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for_statement"
+body_field = "body"
+
+[[patterns.loop.bounded]]
+node_type = "for_generic_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "repeat_statement"
+body_field = "body"
+
+[patterns.error_handling]
+# Lua uses pcall/xpcall, not try/catch. Detected as text patterns.
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "io.open("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "socket.connect("
+kind = "Socket"
+
+[[patterns.resource.release]]
+text = ":close()"
+kind = "Generic"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "coroutine.create("
+
+[[patterns.concurrency.join]]
+text = "coroutine.resume("
+
+[patterns.locking]

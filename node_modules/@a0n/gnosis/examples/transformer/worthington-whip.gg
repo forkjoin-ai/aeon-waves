@@ -1,0 +1,8 @@
+// worthington-whip.gg — minimal reader-facing Worthington Whip primitive.
+// The primitive lowers into a shard router, shard-local Wallington
+// rotations, and one collapse boundary.
+
+(prompt: FlowFrame { role: 'prompt-sequence', items: '8' })
+(collapsed_output: WorthingtonWhip { shardCount: '2', stages: '2', chunks: '2', shardNames: '[left,right]', stageNames: '[encode,project]' })
+
+(prompt)-[:PROCESS]->(collapsed_output)

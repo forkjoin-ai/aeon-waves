@@ -1,0 +1,3 @@
+// neural_live_word.gg — Live Word Model Inference
+
+(audio_stream: Buffer)-[:PROCESS]->(live_word_model: WebGPU)-[:PROCESS]->(transcript: Text)

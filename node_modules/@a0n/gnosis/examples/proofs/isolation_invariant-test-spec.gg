@@ -1,0 +1,13 @@
+// isolation_invariant.gg -- Buleyean proof topology
+// Converted from isolation_invariant.tla
+
+(theorem: Theorem { bules: '0', proposition: 'isolation_invariant' })
+
+(test_outcomes: Hypothesis { bules: '0', proposition: 'test_outcomes is well-defined' })
+(pass_int: Hypothesis { bules: '0', proposition: 'pass: Int is well-defined' })
+(fail_int: Hypothesis { bules: '0', proposition: 'fail: Int is well-defined' })
+(skip_int: Hypothesis { bules: '0', proposition: 'skip: Int] is well-defined' })
+(global_mock_state_map_of_mock_names_to_their_current_values: Hypothesis { bules: '0', proposition: 'global_mock_state \* Map of mock names to their current values is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

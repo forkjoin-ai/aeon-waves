@@ -1,0 +1,26 @@
+// DifferentiableTopology.gg -- Buleyean proof topology
+// Converted from DifferentiableTopology.tla (auto-generated)
+
+(theorem: Theorem { bules: '0', proposition: 'DifferentiableTopology' })
+
+(numparams: Axiom { bules: '0', proposition: 'NumParams is given' })
+(number_of_learnable_parameters: Axiom { bules: '0', proposition: '\* Number of learnable parameters is given' })
+(maxsteps_maximum_training_steps: Axiom { bules: '0', proposition: 'MaxSteps        \* Maximum training steps is given' })
+
+(tapesize: Hypothesis { bules: '0', proposition: 'tapeSize is well-defined' })
+(number_of_values_on_the_gradient_tape: Hypothesis { bules: '0', proposition: '\* Number of values on the gradient tape is well-defined' })
+(paramgrads: Hypothesis { bules: '0', proposition: 'paramGrads is well-defined' })
+(per_parameter_gradient_status_zero: Hypothesis { bules: '0', proposition: '\* Per-parameter gradient status: "zero" is well-defined' })
+(active: Hypothesis { bules: '0', proposition: '"active" is well-defined' })
+(vanishing: Hypothesis { bules: '0', proposition: '"vanishing" is well-defined' })
+(exploding: Hypothesis { bules: '0', proposition: '"exploding" is well-defined' })
+(trainingstep: Hypothesis { bules: '0', proposition: 'trainingStep is well-defined' })
+(current_training_step: Hypothesis { bules: '0', proposition: '\* Current training step is well-defined' })
+(lossdecreasing: Hypothesis { bules: '0', proposition: 'lossDecreasing is well-defined' })
+(whether_loss_decreased_in_last_step: Hypothesis { bules: '0', proposition: '\* Whether loss decreased in last step is well-defined' })
+(phase: Hypothesis { bules: '0', proposition: 'phase is well-defined' })
+(forward_backward_update_idle: Hypothesis { bules: '0', proposition: '\* "forward" | "backward" | "update" | "idle" is well-defined' })
+(gradienthealth_healthy_vanishing_exploding: Hypothesis { bules: '0', proposition: 'gradientHealth      \* "healthy" | "vanishing" | "exploding" is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

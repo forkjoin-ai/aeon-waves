@@ -1,0 +1,20 @@
+# Implements topology node 'compile_framework_to_gg'
+# Topology node: compile_framework_to_gg
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'group_routes_by_path'
+# Topology node: group_routes_by_path
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'escape_gg_string'
+# Topology node: escape_gg_string
+# Language: zig
+# TODO: implement
+
+# Implements topology node 'compile_ditto_self_hosting'
+# Topology node: compile_ditto_self_hosting
+# Language: zig
+# TODO: implement
+

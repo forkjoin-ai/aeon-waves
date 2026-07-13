@@ -1,0 +1,3 @@
+// pensieve_narrative_curation.gg — Narrative Curation Service
+
+(memories: Array)-[:PROCESS]->(llm_curator: Model)-[:PROCESS]->(story_arc: Document)

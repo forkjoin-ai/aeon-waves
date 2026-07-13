@@ -1,0 +1,7 @@
+// effect_contract.gg
+// Explicit effect declarations that match inferred GG usage.
+
+(reader:IO { op: 'read_file', effects: 'fs.local' })
+(sync:ZKSyncEnvelope { effects: 'auth.zk' })
+
+(reader)-[:PROCESS]->(sync)

@@ -1,0 +1,3 @@
+// sensor_morphcast_mapper.gg — Morphcast Emotion Mapper
+
+(camera_feed: Video)-[:PROCESS]->(morphcast_engine: WebAssembly)-[:PROCESS]->(emotion_vector: CVM)

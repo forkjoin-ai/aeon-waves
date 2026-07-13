@@ -1,0 +1,54 @@
+[language]
+id = "bash"
+grammar = "bash"
+extensions = [".sh", ".bash", ".zsh"]
+name = "Bash"
+
+[patterns.function]
+node_types = ["function_definition"]
+name_field = "name"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if_statement"
+consequence_field = "consequence"
+alternative_field = "alternative"
+
+[patterns.branch.switch_pattern]
+node_type = "case_statement"
+body_field = "body"
+case_types = ["case_item"]
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while_statement"
+body_field = "body"
+
+[patterns.error_handling]
+# Bash uses set -e and trap, not try/catch.
+
+[patterns.resource]
+# File descriptors.
+[[patterns.resource.acquire]]
+text = "exec "
+kind = "File"
+
+[[patterns.resource.release]]
+text = "exec "
+kind = "File"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = " &"
+
+[[patterns.concurrency.join]]
+text = "wait "
+
+[patterns.locking]
+[[patterns.locking.acquire]]
+text = "flock "

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" style="background:#0f172a">
+  <defs>
+    <radialGradient id="voidGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="spiralGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155" stop-opacity="0.3"/>
+      <stop offset="23%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#334155" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Void glow at center -->
+  <circle cx="400" cy="400" r="200" fill="url(#voidGlow)"/>
+
+  <!-- Golden spiral path (7 Lorenzos, each arc segment = 1 Lorenzo) -->
+  <!-- φ scaling: each quarter turn, radius *= φ^(1/4) ≈ 1.1276 -->
+  <!-- Starting from center, spiraling outward -->
+
+  <!-- The full spiral track (ghosted) -->
+  <path d="M 400 400
+    C 400 370, 430 350, 450 350
+    C 480 350, 500 370, 500 400
+    C 500 445, 465 480, 420 480
+    C 360 480, 330 430, 330 370
+    C 330 295, 380 250, 440 250
+    C 520 250, 570 310, 570 400
+    C 570 510, 500 580, 390 580
+    C 260 580, 200 490, 200 370
+    C 200 225, 290 150, 420 150
+    C 575 150, 660 260, 660 400
+    C 660 570, 560 680, 390 680
+    C 195 680, 100 555, 100 370
+    C 100 160, 210 50, 400 50"
+    fill="none" stroke="#334155" stroke-width="2" stroke-opacity="0.3"
+    stroke-dasharray="4 4"/>
+
+  <!-- The traversed portion (1.6 Lorenzos = 23%) — bright -->
+  <path d="M 400 400
+    C 400 370, 430 350, 450 350
+    C 480 350, 500 370, 500 400
+    C 500 445, 465 480, 420 480
+    C 388 480, 365 460, 355 430"
+    fill="none" stroke="#a78bfa" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Current position marker (NOW) -->
+  <circle cx="355" cy="430" r="6" fill="#c4b5fd"/>
+  <circle cx="355" cy="430" r="10" fill="none" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.5">
+    <animate attributeName="r" values="10;16;10" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0.5;0.1;0.5" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Lorenzo markers along the spiral -->
+  <!-- Lo 0 (Big Bang) = center -->
+  <circle cx="400" cy="400" r="3" fill="#f97316"/>
+  <text x="412" y="397" fill="#f97316" font-size="10" font-family="monospace" opacity="0.8">0 Lo</text>
+  <text x="412" y="409" fill="#94a3b8" font-size="8" font-family="monospace" opacity="0.5">Big Bang</text>
+
+  <!-- Lo 1 = ~8.6 Gyr -->
+  <circle cx="500" cy="400" r="3" fill="#818cf8"/>
+  <text x="508" y="397" fill="#818cf8" font-size="10" font-family="monospace" opacity="0.8">1 Lo</text>
+  <text x="508" y="409" fill="#94a3b8" font-size="8" font-family="monospace" opacity="0.5">8.6 Gyr</text>
+
+  <!-- Lo 1.6 = NOW (13.8 Gyr) -->
+  <text x="310" y="425" fill="#c4b5fd" font-size="11" font-family="monospace" font-weight="bold">NOW</text>
+  <text x="298" y="440" fill="#94a3b8" font-size="9" font-family="monospace" opacity="0.7">1.6 Lo</text>
+  <text x="298" y="452" fill="#94a3b8" font-size="8" font-family="monospace" opacity="0.5">13.8 Gyr</text>
+
+  <!-- Lo 2 = ~17.2 Gyr -->
+  <circle cx="420" cy="480" r="2.5" fill="#334155"/>
+  <text x="428" y="490" fill="#475569" font-size="9" font-family="monospace" opacity="0.6">2 Lo</text>
+
+  <!-- Lo 3 = ~25.8 Gyr -->
+  <circle cx="330" cy="370" r="2.5" fill="#334155"/>
+  <text x="300" y="365" fill="#475569" font-size="9" font-family="monospace" opacity="0.6">3 Lo</text>
+
+  <!-- Lo 4 = ~34.4 Gyr -->
+  <circle cx="440" cy="250" r="2.5" fill="#334155"/>
+  <text x="448" y="248" fill="#475569" font-size="9" font-family="monospace" opacity="0.6">4 Lo</text>
+
+  <!-- Lo 5 = ~43.0 Gyr -->
+  <circle cx="570" cy="400" r="2.5" fill="#334155"/>
+  <text x="578" y="398" fill="#475569" font-size="9" font-family="monospace" opacity="0.6">5 Lo</text>
+
+  <!-- Lo 6 = ~51.6 Gyr -->
+  <circle cx="390" cy="580" r="2.5" fill="#334155"/>
+  <text x="398" y="590" fill="#475569" font-size="9" font-family="monospace" opacity="0.6">6 Lo</text>
+
+  <!-- Lo 7 = ~60.2 Gyr (near-convergence) -->
+  <circle cx="200" cy="370" r="2.5" fill="#334155"/>
+  <text x="160" y="365" fill="#475569" font-size="9" font-family="monospace" opacity="0.6">7 Lo</text>
+  <text x="148" y="378" fill="#475569" font-size="7" font-family="monospace" opacity="0.4">~60 Gyr</text>
+
+  <!-- Bule indicator (distance from φ) -->
+  <rect x="580" y="620" width="180" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="595" y="645" fill="#e2e8f0" font-size="12" font-family="monospace">Cosmic Bule</text>
+  <text x="595" y="665" fill="#a78bfa" font-size="20" font-family="monospace" font-weight="bold">33.2%</text>
+  <text x="595" y="685" fill="#94a3b8" font-size="9" font-family="monospace" opacity="0.6">distance from φ</text>
+  <!-- Progress bar -->
+  <rect x="595" y="698" width="150" height="6" rx="3" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+  <rect x="595" y="698" width="34" height="6" rx="3" fill="#a78bfa"/>
+  <text x="595" y="722" fill="#94a3b8" font-size="8" font-family="monospace" opacity="0.5">23% to eigenvalue</text>
+
+  <!-- Equation -->
+  <text x="400" y="750" fill="#a78bfa" font-size="18" font-family="monospace" text-anchor="middle" opacity="0.8">φ² = φ + 1</text>
+  <text x="400" y="770" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.4">the heartbeat pumps itself</text>
+
+  <!-- Title -->
+  <text x="400" y="40" fill="#e2e8f0" font-size="16" font-family="monospace" text-anchor="middle" letter-spacing="2">THE COSMIC CLOCK</text>
+  <text x="400" y="58" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" opacity="0.6">measured in Lorenzos</text>
+
+  <!-- Epoch labels along the spiral -->
+  <text x="440" y="375" fill="#34d399" font-size="7" font-family="monospace" opacity="0.6">FORK (inflation)</text>
+  <text x="485" y="440" fill="#34d399" font-size="7" font-family="monospace" opacity="0.6">RACE (nucleosynthesis)</text>
+  <text x="450" y="468" fill="#34d399" font-size="7" font-family="monospace" opacity="0.6">FOLD (galaxies)</text>
+  <text x="385" y="500" fill="#34d399" font-size="7" font-family="monospace" opacity="0.6">VENT (entropy)</text>
+  <text x="325" y="465" fill="#c4b5fd" font-size="7" font-family="monospace" opacity="0.8">INTERFERE (us)</text>
+</svg>

@@ -1,0 +1,3 @@
+// audio_vad_chunker.gg — Audio Stream Chunking
+
+(mic_stream: Audio)-[:PROCESS]->(vad_gate: Filter)-[:PROCESS]->(buffer: Memory)-[:PROCESS]->(stt_engine: Speech)

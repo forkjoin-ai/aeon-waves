@@ -1,0 +1,25 @@
+// qregister.gg — Quantum Register: single value in superposition
+// CRDT is the only state model. No memory. No GC. Append-only.
+//
+// Concurrent writes FORK into superposition.
+// OBSERVE triggers COLLAPSE with last-writer-wins.
+// History is permanent — beta1=0 means converged, not deleted.
+
+(register: QRegister { type: 'lww', clock: 'hlc' })
+
+// Concurrent writes enter superposition
+(register)-[:FORK]->(write_a | write_b | write_c)
+
+(write_a: Write { op: 'set', value: 'alice', ts: '1' })
+(write_b: Write { op: 'set', value: 'bob', ts: '2' })
+(write_c: Write { op: 'set', value: 'charlie', ts: '3' })
+
+// Operations are in superposition (beta1 = 3)
+// No merge yet. All values coexist.
+
+// A client reads — OBSERVE forces collapse
+(write_a | write_b | write_c)-[:OBSERVE { strategy: 'lww' }]->(observed)
+
+// beta1 = 0 at observed. One value won (highest timestamp).
+// write_a, write_b, write_c still exist in the topology — history is permanent.
+(observed: Converged { type: 'register' })

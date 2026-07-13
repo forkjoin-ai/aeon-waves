@@ -1,0 +1,9 @@
+// wallington-worthington-reference.test.gg
+// Verifies the reader-facing Wallington Rotation and Worthington Whip examples.
+
+(test_suite: TestSuite { name: 'wallington-worthington-reference' })
+(rotation_reader: Verify { module: './wallington-rotation.gg', beta1_max: '6' })
+(whip_reader: Verify { module: './worthington-whip.gg', beta1_max: '8' })
+
+(test_suite)-[:OBSERVE]->(rotation_reader | whip_reader)
+

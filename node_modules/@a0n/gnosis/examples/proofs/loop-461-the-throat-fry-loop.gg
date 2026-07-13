@@ -1,0 +1,12 @@
+// BehaviorLoop_461_the_throat_fry_loop.gg -- Buleyean proof topology
+// Converted from BehaviorLoop_461_the_throat_fry_loop.tla
+
+(theorem: Theorem { bules: '0', proposition: 'BehaviorLoop_461_the_throat_fry_loop' })
+
+(active: Hypothesis { bules: '0', proposition: 'active is well-defined' })
+(beta1: Hypothesis { bules: '0', proposition: 'beta1 is well-defined' })
+(payloadpresent: Hypothesis { bules: '0', proposition: 'payloadPresent is well-defined' })
+(consensusreached: Hypothesis { bules: '0', proposition: 'consensusReached is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

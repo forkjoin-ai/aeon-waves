@@ -1,0 +1,40 @@
+# Implements topology node 'framework_id'
+# Topology node: framework_id
+# Language: haskell
+# TODO: implement
+
+# Implements topology node 'language'
+# Topology node: language
+# Language: haskell
+# TODO: implement
+
+# Implements topology node 'detect'
+# Topology node: detect
+# Language: haskell
+# TODO: implement
+
+# Implements topology node 'extract_annotation_path'
+# Topology node: extract_annotation_path
+# Language: haskell
+# TODO: implement
+
+# Implements topology node 'extract_request_methods'
+# Topology node: extract_request_methods
+# Language: haskell
+# TODO: implement
+
+# Implements topology node 'is_class_level'
+# Topology node: is_class_level
+# Language: haskell
+# TODO: implement
+
+# Implements topology node 'find_java_method'
+# Topology node: find_java_method
+# Language: haskell
+# TODO: implement
+
+# Implements topology node 'detect_spring_port'
+# Topology node: detect_spring_port
+# Language: haskell
+# TODO: implement
+

@@ -1,0 +1,9 @@
+// moe-routing.test.gg
+// Parameter-matched routed expert benchmark modules differ only in FOLD strategy.
+
+(test_suite: TestSuite { name: 'moe-routing-benchmark' })
+(linear_fold: Verify { module: './moe-routing-linear.gg', beta1_max: '8' })
+(winner_fold: Verify { module: './moe-routing-winner-take-all.gg', beta1_max: '8' })
+(early_fold: Verify { module: './moe-routing-early-stop.gg', beta1_max: '8' })
+
+(test_suite)-[:OBSERVE]->(linear_fold | winner_fold | early_fold)

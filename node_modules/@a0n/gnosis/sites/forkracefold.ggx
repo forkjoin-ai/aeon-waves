@@ -1,0 +1,119 @@
+// forkracefold.com — The first .ggx site
+// A research surface for the fork/race/fold manuscript
+// The site IS the topology. The topology IS the wire format.
+
+// === Content Sources ===
+(manuscript: Content { path: '/content/ch17-arxiv-manuscript.md' })
+(companion_tests: Content { path: '/content/companion-tests-README.md' })
+(publish_proof: Content { path: '/content/ch17-publish-proof.json' })
+(static_assets: Assets { directory: '/content' })
+
+// === Request Processing ===
+(request: HttpRequest)
+(router: Router)
+(cache: Cache { name: 'aeon-v1' })
+
+// === Route Handlers ===
+(paper_api: PaperHandler { chapter: 'ch17' })
+(verify_api: VerifyHandler)
+(content_handler: StaticHandler)
+(spa_shell: Shell { entry: 'index.html' })
+
+// === Response Assembly ===
+(renderer: Renderer { format: 'markdown' })
+(response: HttpResponse)
+
+// 1. Request arrives — race cache vs router
+(request)-[:FORK]->(cache | router)
+(cache | router)-[:RACE]->(resolved)
+
+// 2. Router dispatches to handler
+(resolved)-[:FORK]->(paper_api | verify_api | content_handler | spa_shell)
+(paper_api | verify_api | content_handler | spa_shell)-[:RACE]->(handler_result)
+
+// 3. Paper API loads manuscript
+(paper_api)-[:PROCESS]->(manuscript)-[:PROCESS]->(renderer)
+
+// 4. Verification forks quick and full
+(verify_api)-[:FORK]->(quick_verify: QuickVerify | full_verify: FullVerify)
+(quick_verify | full_verify)-[:RACE]->(verification_result)
+
+// 5. Assemble response
+(handler_result)-[:PROCESS]->(response)
+
+// === Preload (Service Worker) ===
+(activate: ServiceWorker { event: 'activate' })
+(flow: FlowTransport { protocol: 'aeon' })
+
+(activate)-[:PROCESS]->(flow)
+(flow)-[:FORK]->(manuscript | companion_tests | publish_proof | static_assets)
+(manuscript | companion_tests | publish_proof | static_assets)-[:FOLD { strategy: 'cache-all' }]->(preloaded)
+
+// === Presence ===
+(ws_upgrade: WebSocket)
+(presence: Presence { room: 'manuscript' })
+(ws_upgrade)-[:PROCESS]->(presence)
+---
+import React from 'react';
+
+export function ManuscriptPage({ content, depth }: { content: string; depth?: number }) {
+    return (
+        <article className="manuscript prose dark:prose-invert max-w-none">
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+            {depth !== undefined && depth > 0 && (
+                <nav className="depth-indicator" aria-label="Reading depth">
+                    <span className="depth-bar" style={{ width: `${Math.min(100, depth)}%` }} />
+                </nav>
+            )}
+        </article>
+    );
+}
+
+export function VerificationPanel({ results }: { results: Array<{ claim: string; pass: boolean; detail?: string }> }) {
+    const passCount = results.filter(r => r.pass).length;
+    return (
+        <aside className="verify-panel" role="complementary" aria-label="Claim verification">
+            <header className="verify-header">
+                <h3>Verification</h3>
+                <span className="verify-count">{passCount}/{results.length} verified</span>
+            </header>
+            <ul className="verify-list">
+                {results.map((r, i) => (
+                    <li key={i} className={`verify-item ${r.pass ? 'verified' : 'unverified'}`}>
+                        <span className="verify-icon" aria-hidden="true">{r.pass ? '\u2713' : '\u2717'}</span>
+                        <span className="verify-claim">{r.claim}</span>
+                        {r.detail && <p className="verify-detail">{r.detail}</p>}
+                    </li>
+                ))}
+            </ul>
+        </aside>
+    );
+}
+
+export function CompanionTests({ tests }: { tests: string }) {
+    return (
+        <section className="companion-tests" aria-label="Companion test suite">
+            <h3>Companion Tests</h3>
+            <pre className="test-source"><code>{tests}</code></pre>
+        </section>
+    );
+}
+
+export function PublishProof({ proof }: { proof: { hash: string; timestamp: string; anchor?: string } }) {
+    return (
+        <footer className="publish-proof" aria-label="Publication proof">
+            <dl>
+                <dt>Content Hash</dt>
+                <dd><code>{proof.hash}</code></dd>
+                <dt>Timestamp</dt>
+                <dd><time dateTime={proof.timestamp}>{proof.timestamp}</time></dd>
+                {proof.anchor && (
+                    <>
+                        <dt>Blockchain Anchor</dt>
+                        <dd><code>{proof.anchor}</code></dd>
+                    </>
+                )}
+            </dl>
+        </footer>
+    );
+}

@@ -1,0 +1,18 @@
+// qset.gg — Quantum Set: observe-remove semantics
+// You can only remove what you have observed.
+// No tombstones — the topology records what was observed and when.
+
+(set: QSet { collapse: 'observe-remove' })
+
+// Concurrent add and remove of the same element
+(set)-[:FORK]->(add_branch | remove_branch)
+
+(add_branch)-[:PROCESS { op: 'add', element: 'x' }]->(added)
+(remove_branch)-[:PROCESS { op: 'remove', element: 'x' }]->(removed)
+
+// OBSERVE with observe-remove strategy:
+// If remove_branch has not observed add_branch, element survives.
+// Causal visibility is encoded in the topology structure itself.
+(added | removed)-[:OBSERVE { strategy: 'observe-remove' }]->(resolved)
+
+(resolved: Converged { type: 'set' })

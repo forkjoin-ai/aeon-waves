@@ -1,0 +1,21 @@
+// QuantumTopology.gg -- Buleyean proof topology
+// Converted from QuantumTopology.tla (auto-generated)
+
+(theorem: Theorem { bules: '0', proposition: 'QuantumTopology' })
+
+(numqubits_number_of_qubits_in_the_register: Axiom { bules: '0', proposition: 'NumQubits   \* Number of qubits in the register is given' })
+
+(superpositioncount: Hypothesis { bules: '0', proposition: 'superpositionCount is well-defined' })
+(number_of_active_superposition_branches: Hypothesis { bules: '0', proposition: '\* Number of active superposition branches is well-defined' })
+(collapsed: Hypothesis { bules: '0', proposition: 'collapsed is well-defined' })
+(whether_the_state_has_been_measured: Hypothesis { bules: '0', proposition: '\* Whether the state has been measured is well-defined' })
+(entangled: Hypothesis { bules: '0', proposition: 'entangled is well-defined' })
+(whether_qubits_are_entangled: Hypothesis { bules: '0', proposition: '\* Whether qubits are entangled is well-defined' })
+(measurements: Hypothesis { bules: '0', proposition: 'measurements is well-defined' })
+(sequence_of_measurement_results: Hypothesis { bules: '0', proposition: '\* Sequence of measurement results is well-defined' })
+(gatecount: Hypothesis { bules: '0', proposition: 'gateCount is well-defined' })
+(number_of_gates_applied: Hypothesis { bules: '0', proposition: '\* Number of gates applied is well-defined' })
+(normalized_whether_state_is_normalized: Hypothesis { bules: '0', proposition: 'normalized           \* Whether state is normalized is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

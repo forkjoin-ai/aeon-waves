@@ -1,0 +1,40 @@
+# Implements topology node 'framework_id'
+# Topology node: framework_id
+# Language: ocaml
+# TODO: implement
+
+# Implements topology node 'language'
+# Topology node: language
+# Language: ocaml
+# TODO: implement
+
+# Implements topology node 'detect'
+# Topology node: detect
+# Language: ocaml
+# TODO: implement
+
+# Implements topology node 'parse_route_decorator'
+# Topology node: parse_route_decorator
+# Language: ocaml
+# TODO: implement
+
+# Implements topology node 'parse_methods_list'
+# Topology node: parse_methods_list
+# Language: ocaml
+# TODO: implement
+
+# Implements topology node 'find_decorated_function'
+# Topology node: find_decorated_function
+# Language: ocaml
+# TODO: implement
+
+# Implements topology node 'extract_string_arg'
+# Topology node: extract_string_arg
+# Language: ocaml
+# TODO: implement
+
+# Implements topology node 'extract_port_kwarg'
+# Topology node: extract_port_kwarg
+# Language: ocaml
+# TODO: implement
+

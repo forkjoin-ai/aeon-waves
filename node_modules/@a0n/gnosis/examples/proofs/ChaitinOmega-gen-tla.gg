@@ -1,0 +1,25 @@
+// ChaitinOmega.gg -- Buleyean proof topology
+// Converted from ChaitinOmega.tla (auto-generated)
+
+(theorem: Theorem { bules: '0', proposition: 'ChaitinOmega' })
+
+(numchoices: Axiom { bules: '0', proposition: 'NumChoices is given' })
+(number_of_hypotheses_in_solomonoff_space: Axiom { bules: '0', proposition: '\* Number of hypotheses in Solomonoff space is given' })
+(maxcomplexity: Axiom { bules: '0', proposition: 'MaxComplexity is given' })
+(ceiling_for_complexity_values: Axiom { bules: '0', proposition: '\* Ceiling for complexity values is given' })
+(maxrounds_maximum_empirical_rounds: Axiom { bules: '0', proposition: 'MaxRounds       \* Maximum empirical rounds is given' })
+
+(complexity: Hypothesis { bules: '0', proposition: 'complexity is well-defined' })
+(per_choice_kolmogorov_complexity: Hypothesis { bules: '0', proposition: '\* Per-choice Kolmogorov complexity is well-defined' })
+(weights: Hypothesis { bules: '0', proposition: 'weights is well-defined' })
+(per_choice_buleyean_weight: Hypothesis { bules: '0', proposition: '\* Per-choice Buleyean weight is well-defined' })
+(rounds: Hypothesis { bules: '0', proposition: 'rounds is well-defined' })
+(current_empirical_round_count: Hypothesis { bules: '0', proposition: '\* Current empirical round count is well-defined' })
+(omeganumerator: Hypothesis { bules: '0', proposition: 'omegaNumerator is well-defined' })
+(halting_probability_numerator: Hypothesis { bules: '0', proposition: '\* Halting probability numerator is well-defined' })
+(omegadenominator: Hypothesis { bules: '0', proposition: 'omegaDenominator is well-defined' })
+(total_probability_denominator: Hypothesis { bules: '0', proposition: '\* Total probability denominator is well-defined' })
+(prefixlength_current_prefix_length: Hypothesis { bules: '0', proposition: 'prefixLength        \* Current prefix length is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

@@ -1,0 +1,3 @@
+// logic_theorem_prover.gg — Theorem Proving with Aeon Logic
+
+(theorem: Logic)-[:PROCESS]->(solver: Z3)-[:PROCESS]->(proof: Result)

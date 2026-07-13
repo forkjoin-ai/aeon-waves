@@ -1,0 +1,3 @@
+// financial_stress_predictor.gg — Financial stress prediction
+
+(financial_data: Metrics)-[:PROCESS]->(stress_model: ML)-[:PROCESS]->(stress_alert: Alert)

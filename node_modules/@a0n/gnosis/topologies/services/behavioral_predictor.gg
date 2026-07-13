@@ -1,0 +1,3 @@
+// behavioral_predictor.gg — Behavioral prediction from user data
+
+(behavior_stream: Log)-[:PROCESS]->(pattern_recognizer: ML)-[:PROCESS]->(next_behavior_prediction: Event)

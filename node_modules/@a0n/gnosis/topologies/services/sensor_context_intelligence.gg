@@ -1,0 +1,3 @@
+// sensor_context_intelligence.gg — Context Intelligence from multi-modal sensors
+
+(raw_sensor: Data)-[:PROCESS]->(aggregator: Logic)-[:PROCESS]->(context_intelligence: State)

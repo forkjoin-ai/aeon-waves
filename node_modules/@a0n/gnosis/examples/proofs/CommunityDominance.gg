@@ -1,0 +1,38 @@
+// CommunityDominance.gg -- Buleyean proof topology
+// Converted from CommunityDominance.tla
+
+(theorem: Theorem { bules: '0', proposition: 'CommunityDominance' })
+
+(backends: Axiom { bules: '0', proposition: 'Backends is given' })
+(cpu_0: Axiom { bules: '0', proposition: '{"cpu-0" is given' })
+(gpu_0: Axiom { bules: '0', proposition: '"gpu-0" is given' })
+(npu_0: Axiom { bules: '0', proposition: '"npu-0" is given' })
+(wasm_0: Axiom { bules: '0', proposition: '"wasm-0"}) is given' })
+(layers: Axiom { bules: '0', proposition: 'Layers is given' })
+(cpu: Axiom { bules: '0', proposition: '{"cpu" is given' })
+(gpu: Axiom { bules: '0', proposition: '"gpu" is given' })
+(npu: Axiom { bules: '0', proposition: '"npu" is given' })
+(wasm: Axiom { bules: '0', proposition: '"wasm"}) is given' })
+(maxfailurepaths: Axiom { bules: '0', proposition: 'MaxFailurePaths is given' })
+(8: Axiom { bules: '0', proposition: '8) is given' })
+(decisionstreams: Axiom { bules: '0', proposition: 'DecisionStreams is given' })
+(1: Axiom { bules: '0', proposition: '1) is given' })
+(maxrounds: Axiom { bules: '0', proposition: 'MaxRounds is given' })
+
+(buledeficit: Hypothesis { bules: '0', proposition: 'buleDeficit is well-defined' })
+(communitycontext: Hypothesis { bules: '0', proposition: 'communityContext is well-defined' })
+(backendscores: Hypothesis { bules: '0', proposition: 'backendScores is well-defined' })
+(failures: Hypothesis { bules: '0', proposition: 'failures is well-defined' })
+(latencyms: Hypothesis { bules: '0', proposition: 'latencyMs} is well-defined' })
+(activebackends: Hypothesis { bules: '0', proposition: 'activeBackends is well-defined' })
+(roundhistory: Hypothesis { bules: '0', proposition: 'roundHistory is well-defined' })
+(schedule: Hypothesis { bules: '0', proposition: 'schedule is well-defined' })
+(staticschedule: Hypothesis { bules: '0', proposition: 'staticSchedule is well-defined' })
+(adaptivecost: Hypothesis { bules: '0', proposition: 'adaptiveCost is well-defined' })
+(staticcost: Hypothesis { bules: '0', proposition: 'staticCost is well-defined' })
+(cumulativeheat: Hypothesis { bules: '0', proposition: 'cumulativeHeat is well-defined' })
+(converged: Hypothesis { bules: '0', proposition: 'converged is well-defined' })
+(round_current_round_number: Hypothesis { bules: '0', proposition: 'round               \* Current round number is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

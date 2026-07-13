@@ -1,0 +1,99 @@
+[language]
+id = "cpp"
+grammar = "cpp"
+extensions = [".cpp", ".cc", ".cxx", ".hpp", ".hxx"]
+name = "C++"
+
+[patterns.function]
+node_types = ["function_definition"]
+name_field = "declarator"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if_statement"
+consequence_field = "consequence"
+alternative_field = "alternative"
+
+[patterns.branch.switch_pattern]
+node_type = "switch_statement"
+body_field = "body"
+case_types = ["case_statement"]
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for_statement"
+body_field = "body"
+
+[[patterns.loop.bounded]]
+node_type = "for_range_loop"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "do_statement"
+body_field = "body"
+
+[patterns.error_handling]
+[patterns.error_handling.try_pattern]
+try_type = "try_statement"
+body_field = "body"
+catch_type = "catch_clause"
+catch_body_field = "body"
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "fopen("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "std::fstream"
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "new "
+kind = "Memory"
+
+[[patterns.resource.acquire]]
+text = "make_unique"
+kind = "Memory"
+
+[[patterns.resource.acquire]]
+text = "make_shared"
+kind = "Memory"
+
+[[patterns.resource.release]]
+text = "fclose("
+kind = "File"
+
+[[patterns.resource.release]]
+text = "delete "
+kind = "Memory"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "std::thread("
+
+[[patterns.concurrency.spawn]]
+text = "std::async("
+
+[[patterns.concurrency.join]]
+text = ".join()"
+
+[[patterns.concurrency.join]]
+text = ".get()"
+
+[patterns.locking]
+[[patterns.locking.acquire]]
+text = ".lock()"
+
+[[patterns.locking.release]]
+text = ".unlock()"
+
+[[patterns.locking.scoped]]
+node_type = "declaration"
+body_field = "body"
+kind = "lock_guard"

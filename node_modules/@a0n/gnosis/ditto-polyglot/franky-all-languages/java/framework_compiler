@@ -1,0 +1,68 @@
+/**
+ * Implements topology node 'compile_framework_to_gg'
+ *
+ * Topology node: compile_framework_to_gg
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class CompileFrameworkToGg {
+    public static Object compileFrameworkToGg(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'group_routes_by_path'
+ *
+ * Topology node: group_routes_by_path
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class GroupRoutesByPath {
+    public static Object groupRoutesByPath(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'escape_gg_string'
+ *
+ * Topology node: escape_gg_string
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class EscapeGgString {
+    public static Object escapeGgString(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'compile_ditto_self_hosting'
+ *
+ * Topology node: compile_ditto_self_hosting
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class CompileDittoSelfHosting {
+    public static Object compileDittoSelfHosting(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+

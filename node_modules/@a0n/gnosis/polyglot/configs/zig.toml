@@ -1,0 +1,72 @@
+[language]
+id = "zig"
+grammar = "zig"
+extensions = [".zig"]
+name = "Zig"
+
+[patterns.function]
+node_types = ["FnProto"]
+name_field = "name"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "IfExpr"
+consequence_field = "then"
+alternative_field = "else"
+
+[patterns.branch.switch_pattern]
+node_type = "SwitchExpr"
+body_field = "body"
+case_types = ["SwitchProng"]
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "ForExpr"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "WhileExpr"
+body_field = "body"
+
+[patterns.error_handling]
+# Zig uses errdefer and error unions, not try/catch.
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "std.fs.openFile("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "allocator.alloc("
+kind = "Memory"
+
+[[patterns.resource.acquire]]
+text = "allocator.create("
+kind = "Memory"
+
+[[patterns.resource.release]]
+text = ".close()"
+kind = "File"
+
+[[patterns.resource.release]]
+text = "allocator.free("
+kind = "Memory"
+
+[[patterns.resource.release]]
+text = "allocator.destroy("
+kind = "Memory"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "std.Thread.spawn("
+
+[[patterns.concurrency.join]]
+text = ".join()"
+
+[patterns.locking]
+[[patterns.locking.acquire]]
+text = ".lock()"
+
+[[patterns.locking.release]]
+text = ".unlock()"

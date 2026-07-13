@@ -1,0 +1,3 @@
+// sensor_ambient_light.gg — Ambient Light Adaptation
+
+(lux: Number)-[:PROCESS]->(theme_mapper: Logic)-[:PROCESS]->(ui_theme: Style)

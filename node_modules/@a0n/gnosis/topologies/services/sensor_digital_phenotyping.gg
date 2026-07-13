@@ -1,0 +1,3 @@
+// sensor_digital_phenotyping.gg — Digital Phenotyping Analysis
+
+(device_usage: Logs)-[:PROCESS]->(behavior_model: ML)-[:PROCESS]->(phenotype: Profile)

@@ -1,0 +1,13 @@
+// recovery-trust-weak.gg -- weak recovery proofing and approval boundaries
+
+(request: Request)
+(channel: Channel { channelBinding: 'false' })
+(identity: IdentityProof { identityBinding: 'false' })
+(approval: Approval { quorum: '1', allowEscalation: 'true' })
+(audit: Audit { retained: 'false', visible: 'false', alertUser: 'false' })
+(recovery: Recovery { requireProof: 'false', notifyUser: 'false' })
+(trust: TrustEdge { freshnessDays: '90' })
+(helpdesk: Helpdesk { override: 'true', requireTicket: 'false' })
+(receipt: Receipt)
+
+(request)-[:PROCESS]->(channel)-[:PROCESS]->(identity)-[:PROCESS]->(approval)-[:PROCESS]->(audit)-[:PROCESS]->(recovery)-[:PROCESS]->(trust)-[:PROCESS]->(helpdesk)-[:PROCESS]->(receipt)

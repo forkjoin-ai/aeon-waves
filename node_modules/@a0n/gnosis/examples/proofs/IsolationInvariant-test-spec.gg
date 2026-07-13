@@ -1,0 +1,12 @@
+// IsolationInvariant.gg -- Buleyean proof topology
+// Converted from IsolationInvariant.tla
+
+(theorem: Theorem { bules: '0', proposition: 'IsolationInvariant' })
+
+(completed_tests: Hypothesis { bules: '0', proposition: 'completed_tests is well-defined' })
+(active_paths: Hypothesis { bules: '0', proposition: 'active_paths is well-defined' })
+(mock_pollution: Hypothesis { bules: '0', proposition: 'mock_pollution is well-defined' })
+(b1_state_the_betti_number_of_the_execution_graph: Hypothesis { bules: '0', proposition: 'b1_state          \* The Betti number of the execution graph is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

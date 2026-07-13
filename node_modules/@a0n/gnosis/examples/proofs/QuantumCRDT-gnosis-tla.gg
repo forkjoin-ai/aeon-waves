@@ -1,0 +1,21 @@
+// QuantumCRDT.gg -- Buleyean proof topology
+// Converted from QuantumCRDT.tla
+
+(theorem: Theorem { bules: '0', proposition: 'QuantumCRDT' })
+
+(replicas: Axiom { bules: '0', proposition: 'Replicas is given' })
+(a: Axiom { bules: '0', proposition: '{"a" is given' })
+(b: Axiom { bules: '0', proposition: '"b" is given' })
+(c: Axiom { bules: '0', proposition: '"c"}) is given' })
+(maxbeta1: Axiom { bules: '0', proposition: 'MaxBeta1 is given' })
+(10: Axiom { bules: '0', proposition: '10) is given' })
+(maxops: Axiom { bules: '0', proposition: 'MaxOps is given' })
+
+(beta1: Hypothesis { bules: '0', proposition: 'beta1 is well-defined' })
+(topology: Hypothesis { bules: '0', proposition: 'topology is well-defined' })
+(replicastate: Hypothesis { bules: '0', proposition: 'replicaState is well-defined' })
+(observed: Hypothesis { bules: '0', proposition: 'observed is well-defined' })
+(converged_boolean_has_the_system_reached_beta1_0: Hypothesis { bules: '0', proposition: 'converged       \* Boolean: has the system reached beta1 = 0? is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

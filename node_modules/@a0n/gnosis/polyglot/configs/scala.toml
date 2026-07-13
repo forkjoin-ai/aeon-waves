@@ -1,0 +1,77 @@
+[language]
+id = "scala"
+grammar = "scala"
+extensions = [".scala", ".sc"]
+name = "Scala"
+
+[patterns.function]
+node_types = ["function_definition"]
+name_field = "name"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if_expression"
+consequence_field = "consequence"
+alternative_field = "alternative"
+
+[patterns.branch.match_pattern]
+node_type = "match_expression"
+body_field = "body"
+arm_type = "case_clause"
+always_exhaustive = true
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for_expression"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while_expression"
+body_field = "body"
+
+[patterns.error_handling]
+[patterns.error_handling.try_pattern]
+try_type = "try_expression"
+body_field = "body"
+catch_type = "catch_clause"
+catch_body_field = "body"
+finally_type = "finally_clause"
+finally_body_field = "body"
+
+[patterns.resource]
+[[patterns.resource.scoped]]
+node_type = "using"
+body_field = "body"
+kind = "AutoCloseable"
+
+[[patterns.resource.acquire]]
+text = "Source.fromFile("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "new FileInputStream("
+kind = "File"
+
+[[patterns.resource.release]]
+text = ".close()"
+kind = "Generic"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "Future {"
+
+[[patterns.concurrency.spawn]]
+text = "Future.apply("
+
+[[patterns.concurrency.join]]
+text = "Await.result("
+
+[[patterns.concurrency.join]]
+text = "Await.ready("
+
+[patterns.locking]
+[[patterns.locking.scoped]]
+node_type = "synchronized"
+body_field = "body"
+kind = "monitor"

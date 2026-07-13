@@ -1,0 +1,89 @@
+[language]
+id = "ruby"
+grammar = "ruby"
+extensions = [".rb", ".rake", ".gemspec"]
+name = "Ruby"
+
+[patterns.function]
+node_types = ["method", "singleton_method"]
+name_field = "name"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if"
+consequence_field = "consequence"
+alternative_field = "alternative"
+
+[patterns.branch.switch_pattern]
+node_type = "case"
+body_field = "body"
+case_types = ["when", "else"]
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "until"
+body_field = "body"
+
+[patterns.error_handling]
+[patterns.error_handling.try_pattern]
+try_type = "begin"
+body_field = "body"
+catch_type = "rescue"
+catch_body_field = "body"
+finally_type = "ensure"
+finally_body_field = "body"
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "File.open("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "IO.open("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "TCPSocket.new("
+kind = "Socket"
+
+[[patterns.resource.acquire]]
+text = "PG.connect("
+kind = "Connection"
+
+[[patterns.resource.release]]
+text = ".close"
+kind = "Generic"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "Thread.new"
+
+[[patterns.concurrency.spawn]]
+text = "Process.fork"
+
+[[patterns.concurrency.join]]
+text = ".join"
+
+[[patterns.concurrency.join]]
+text = ".value"
+
+[patterns.locking]
+[[patterns.locking.acquire]]
+text = ".lock"
+
+[[patterns.locking.release]]
+text = ".unlock"
+
+[[patterns.locking.scoped]]
+node_type = "block"
+body_field = "body"
+kind = "synchronize"

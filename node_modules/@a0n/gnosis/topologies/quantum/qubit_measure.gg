@@ -1,0 +1,13 @@
+// qubit_measure.gg
+// Native qubit superposition and deterministic measurement routing.
+
+(seed:Qubit { state: '0' })
+(superposed:Hadamard)
+(collapse:Measure { force: '1' })
+(one_path:Sink)
+(zero_path:Sink)
+
+(seed)-[:PROCESS]->(superposed)
+(superposed)-[:PROCESS]->(collapse)
+(collapse)-[:PROCESS { case: 'one' }]->(one_path)
+(collapse)-[:PROCESS { case: 'zero' }]->(zero_path)

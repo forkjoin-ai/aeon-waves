@@ -1,0 +1,12 @@
+// aead-kem-weak.gg -- nonce reuse and oracle-bearing decrypt path
+
+(secret: Secret)
+(kdf: KDF)
+(session: SessionKey { bindsIdentity: 'false' })
+(nonce: Nonce { reuse: 'true' })
+(encrypt: Encrypt { algorithm: 'aes-256-gcm' })
+(decrypt: Decrypt { oracle: 'true', emitErrors: 'detailed' })
+(envelope: Envelope { replayGuard: 'false' })
+(cipher: Blob)
+
+(secret)-[:PROCESS]->(kdf)-[:PROCESS]->(session)-[:PROCESS]->(nonce)-[:PROCESS]->(encrypt)-[:PROCESS]->(decrypt)-[:PROCESS]->(envelope)-[:PROCESS]->(cipher)

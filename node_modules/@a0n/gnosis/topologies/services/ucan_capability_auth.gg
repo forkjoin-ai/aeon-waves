@@ -1,0 +1,3 @@
+// ucan_capability_auth.gg — UCAN capability delegation validation
+
+(token: Token)-[:PROCESS]->(verify_sig: Check)-[:PROCESS]->(check_caps: Check)-[:PROCESS]->(auth_ok: Result)

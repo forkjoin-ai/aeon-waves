@@ -1,0 +1,90 @@
+[language]
+id = "c"
+grammar = "c"
+extensions = [".c", ".h"]
+name = "C"
+
+[patterns.function]
+node_types = ["function_definition"]
+name_field = "declarator"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if_statement"
+consequence_field = "consequence"
+alternative_field = "alternative"
+
+[patterns.branch.switch_pattern]
+node_type = "switch_statement"
+body_field = "body"
+case_types = ["case_statement"]
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "do_statement"
+body_field = "body"
+
+[patterns.error_handling]
+# C has no try/catch -- errors are return codes.
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "fopen("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "open("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "malloc("
+kind = "Memory"
+
+[[patterns.resource.acquire]]
+text = "calloc("
+kind = "Memory"
+
+[[patterns.resource.acquire]]
+text = "socket("
+kind = "Socket"
+
+[[patterns.resource.release]]
+text = "fclose("
+kind = "File"
+
+[[patterns.resource.release]]
+text = "close("
+kind = "File"
+
+[[patterns.resource.release]]
+text = "free("
+kind = "Memory"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "pthread_create("
+
+[[patterns.concurrency.spawn]]
+text = "fork("
+
+[[patterns.concurrency.join]]
+text = "pthread_join("
+
+[[patterns.concurrency.join]]
+text = "waitpid("
+
+[patterns.locking]
+[[patterns.locking.acquire]]
+text = "pthread_mutex_lock("
+
+[[patterns.locking.release]]
+text = "pthread_mutex_unlock("

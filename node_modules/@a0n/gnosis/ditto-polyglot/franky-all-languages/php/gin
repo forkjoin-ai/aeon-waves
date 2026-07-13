@@ -1,0 +1,40 @@
+# Implements topology node 'framework_id'
+# Topology node: framework_id
+# Language: php
+# TODO: implement
+
+# Implements topology node 'language'
+# Topology node: language
+# Language: php
+# TODO: implement
+
+# Implements topology node 'detect'
+# Topology node: detect
+# Language: php
+# TODO: implement
+
+# Implements topology node 'detect_router_names'
+# Topology node: detect_router_names
+# Language: php
+# TODO: implement
+
+# Implements topology node 'extract_go_handler'
+# Topology node: extract_go_handler
+# Language: php
+# TODO: implement
+
+# Implements topology node 'extract_string_arg'
+# Topology node: extract_string_arg
+# Language: php
+# TODO: implement
+
+# Implements topology node 'detect_gin_port'
+# Topology node: detect_gin_port
+# Language: php
+# TODO: implement
+
+# Implements topology node 'sanitize_path'
+# Topology node: sanitize_path
+# Language: php
+# TODO: implement
+

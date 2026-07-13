@@ -1,0 +1,20 @@
+// crdt-split-brain-prevention.gg — Deterministic CRDT convergence with nonce-scoped replay guards
+//
+// Geographically separate replicas can fork concurrent mutations, but replay
+// guards keep the writes unique and OBSERVE folds them into one canonical state.
+
+(cluster_root: MeshRoot { transport: 'dashrelay' })
+(replica_west: Replica { cloud: 'cloudflare', region: 'west' })
+(replica_east: Replica { cloud: 'gcp', region: 'east' })
+(write_west: Mutation { clock: 'hlc', nonce: 'west-41' })
+(write_east: Mutation { clock: 'hlc', nonce: 'east-77' })
+(guarded_west: ReplayGuard { mode: 'nonce-window', nonce: 'west-41' })
+(guarded_east: ReplayGuard { mode: 'nonce-window', nonce: 'east-77' })
+(canonical_state: Converged { split_brain: 'false', strategy: 'deterministic-crdt' })
+
+(cluster_root)-[:FORK]->(replica_west | replica_east)
+(replica_west)-[:PROCESS]->(write_west)
+(replica_east)-[:PROCESS]->(write_east)
+(write_west)-[:PROCESS]->(guarded_west)
+(write_east)-[:PROCESS]->(guarded_east)
+(guarded_west | guarded_east)-[:OBSERVE { strategy: 'deterministic-crdt' }]->(canonical_state)

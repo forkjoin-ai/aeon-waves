@@ -1,0 +1,3 @@
+// core_hume_unified.gg — Hume Unified Emotion Service
+
+(face_mesh: Data)-[:PROCESS]->(hume_api: Network)-[:PROCESS]->(unified_emotions: Map)

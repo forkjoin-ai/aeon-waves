@@ -1,0 +1,76 @@
+//! Implements topology node 'compile_framework_to_gg'
+//!
+//! Topology node: compile_framework_to_gg
+//! Labels: Statement, PolyglotBridgeCall
+
+use serde_json::Value;
+
+/// Implements the topology node.
+pub fn compile_framework_to_gg(input: Value) -> Value {
+    // TODO: implement
+    input
+}
+
+fn main() {
+    let input: Value = serde_json::from_reader(std::io::stdin()).unwrap();
+    let result = compile_framework_to_gg(input);
+    serde_json::to_writer(std::io::stdout(), &result).unwrap();
+}
+
+//! Implements topology node 'group_routes_by_path'
+//!
+//! Topology node: group_routes_by_path
+//! Labels: Statement, PolyglotBridgeCall
+
+use serde_json::Value;
+
+/// Implements the topology node.
+pub fn group_routes_by_path(input: Value) -> Value {
+    // TODO: implement
+    input
+}
+
+fn main() {
+    let input: Value = serde_json::from_reader(std::io::stdin()).unwrap();
+    let result = group_routes_by_path(input);
+    serde_json::to_writer(std::io::stdout(), &result).unwrap();
+}
+
+//! Implements topology node 'escape_gg_string'
+//!
+//! Topology node: escape_gg_string
+//! Labels: Statement, PolyglotBridgeCall
+
+use serde_json::Value;
+
+/// Implements the topology node.
+pub fn escape_gg_string(input: Value) -> Value {
+    // TODO: implement
+    input
+}
+
+fn main() {
+    let input: Value = serde_json::from_reader(std::io::stdin()).unwrap();
+    let result = escape_gg_string(input);
+    serde_json::to_writer(std::io::stdout(), &result).unwrap();
+}
+
+//! Implements topology node 'compile_ditto_self_hosting'
+//!
+//! Topology node: compile_ditto_self_hosting
+//! Labels: Statement, PolyglotBridgeCall
+
+use serde_json::Value;
+
+/// Implements the topology node.
+pub fn compile_ditto_self_hosting(input: Value) -> Value {
+    // TODO: implement
+    input
+}
+
+fn main() {
+    let input: Value = serde_json::from_reader(std::io::stdin()).unwrap();
+    let result = compile_ditto_self_hosting(input);
+    serde_json::to_writer(std::io::stdout(), &result).unwrap();
+}
+

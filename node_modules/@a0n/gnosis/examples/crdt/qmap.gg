@@ -1,0 +1,17 @@
+// qmap.gg — Quantum Map: per-key independent superposition
+// Each key is its own CRDT. Different keys can use different strategies.
+// The map is the topology of its keys.
+
+(map: QMap { collapse: 'per-key' })
+
+// Concurrent writes to different keys
+(map)-[:FORK]->(write_name | write_age)
+
+(write_name)-[:PROCESS { key: 'name', op: 'set', value: 'Alice' }]->(wn)
+(write_age)-[:PROCESS { key: 'age', op: 'set', value: '30' }]->(wa)
+
+// Per-key OBSERVE: each key collapses independently
+// name uses lww, age uses lww — but they could differ
+(wn | wa)-[:OBSERVE { strategy: 'per-key' }]->(resolved)
+
+(resolved: Converged { type: 'map' })

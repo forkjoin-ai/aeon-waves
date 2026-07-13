@@ -1,0 +1,30 @@
+# Implements topology node 'framework_id'
+# Topology node: framework_id
+# Language: scala
+# TODO: implement
+
+# Implements topology node 'language'
+# Topology node: language
+# Language: scala
+# TODO: implement
+
+# Implements topology node 'detect'
+# Topology node: detect
+# Language: scala
+# TODO: implement
+
+# Implements topology node 'detect_app_names'
+# Topology node: detect_app_names
+# Language: scala
+# TODO: implement
+
+# Implements topology node 'extract_string_arg'
+# Topology node: extract_string_arg
+# Language: scala
+# TODO: implement
+
+# Implements topology node 'sanitize_path'
+# Topology node: sanitize_path
+# Language: scala
+# TODO: implement
+

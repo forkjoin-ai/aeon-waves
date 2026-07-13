@@ -1,0 +1,17 @@
+// lfo.gg — Low Frequency Oscillator (Modulation Source)
+//
+// An LFO is an oscillator below hearing range (0.01–20 Hz).
+// It modulates other parameters — cutoff, pitch, amplitude.
+// The LFO forks into multiple modulation targets simultaneously.
+//
+// β₁ = 0 (single waveform, no superposition)
+
+(lfo_rate: Parameter { range: '0.01-20', unit: 'Hz', default: '1' })
+(lfo_depth: Parameter { range: '0-1', default: '0.5' })
+(lfo_shape: Waveform { type: 'sine' })
+(lfo_phase: Accumulator { wrap: '6.283185' })
+
+(lfo_rate)-[:PROCESS]->(lfo_phase)-[:PROCESS]->(lfo_shape)
+(lfo_shape)-[:PROCESS]->(lfo_scale: Multiply)
+(lfo_depth)-[:PROCESS]->(lfo_scale)
+(lfo_scale)-[:PROCESS]->(lfo_out)

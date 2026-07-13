@@ -1,0 +1,19 @@
+// FibonacciConvergence.gg -- Buleyean proof topology
+// Converted from FibonacciConvergence.tla
+
+(theorem: Theorem { bules: '0', proposition: 'FibonacciConvergence' })
+
+(seed1: Axiom { bules: '0', proposition: 'Seed1 is given' })
+(1: Axiom { bules: '0', proposition: '1) is given' })
+(seed2: Axiom { bules: '0', proposition: 'Seed2 is given' })
+(1: Axiom { bules: '0', proposition: '1) is given' })
+(maxsteps: Axiom { bules: '0', proposition: 'MaxSteps is given' })
+(epsilon: Axiom { bules: '0', proposition: 'Epsilon is given' })
+
+(a: Hypothesis { bules: '0', proposition: 'a is well-defined' })
+(b: Hypothesis { bules: '0', proposition: 'b is well-defined' })
+(ratio: Hypothesis { bules: '0', proposition: 'ratio is well-defined' })
+(step_step_counter: Hypothesis { bules: '0', proposition: 'step            \* Step counter is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

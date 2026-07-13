@@ -1,0 +1,23 @@
+// CosmicBule.gg -- Buleyean proof topology
+// Converted from CosmicBule.tla
+
+(theorem: Theorem { bules: '0', proposition: 'CosmicBule' })
+
+(maxcycles: Axiom { bules: '0', proposition: 'MaxCycles is given' })
+(10: Axiom { bules: '0', proposition: '10) is given' })
+(phiscaled: Axiom { bules: '0', proposition: 'PhiScaled is given' })
+(initialratio: Axiom { bules: '0', proposition: 'InitialRatio is given' })
+(10000: Axiom { bules: '0', proposition: '10000 is given' })
+(representing_infinity_at_t_0: Axiom { bules: '0', proposition: 'representing infinity at t=0) is given' })
+(epsilon: Axiom { bules: '0', proposition: 'Epsilon is given' })
+
+(a: Hypothesis { bules: '0', proposition: 'a is well-defined' })
+(b: Hypothesis { bules: '0', proposition: 'b is well-defined' })
+(cycle: Hypothesis { bules: '0', proposition: 'cycle is well-defined' })
+(ratio: Hypothesis { bules: '0', proposition: 'ratio is well-defined' })
+(bule: Hypothesis { bules: '0', proposition: 'bule is well-defined' })
+(prev_bule: Hypothesis { bules: '0', proposition: 'prev_bule is well-defined' })
+(converging_boolean_is_bule_decreasing: Hypothesis { bules: '0', proposition: 'converging      \* Boolean: is bule decreasing? is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

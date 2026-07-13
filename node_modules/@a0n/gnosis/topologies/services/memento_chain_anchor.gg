@@ -1,0 +1,3 @@
+// memento_chain_anchor.gg — Memento Blockchain Anchoring
+
+(memory: Fact)-[:PROCESS]->(hash: Crypto)-[:PROCESS]->(merkle_tree: Data)-[:PROCESS]->(chain_anchor: Ledger)

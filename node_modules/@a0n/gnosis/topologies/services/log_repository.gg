@@ -1,0 +1,3 @@
+// log_repository.gg — System log persistence
+
+(log_event: Event)-[:PROCESS]->(format_log: Transform)-[:PROCESS]->(store_log: DB)

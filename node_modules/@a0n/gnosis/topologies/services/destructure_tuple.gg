@@ -1,0 +1,4 @@
+// Explicit tuple-style destructuring for array payloads.
+
+(seed:Source)-[:PROCESS]->(extract:Destructure { items: "0.id:firstId,2.id:thirdId" })
+(extract)-[:PROCESS]->(sink:Sink)

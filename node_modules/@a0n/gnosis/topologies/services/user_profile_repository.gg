@@ -1,0 +1,3 @@
+// user_profile_repository.gg — User profile storage and retrieval
+
+(update: Profile)-[:PROCESS]->(validate_schema: Schema)-[:PROCESS]->(persist_profile: DB)

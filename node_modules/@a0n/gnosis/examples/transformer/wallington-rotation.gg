@@ -1,0 +1,8 @@
+// wallington-rotation.gg — minimal reader-facing Wallington Rotation
+// primitive. The primitive lowers into the same chunk scheduler,
+// stage-alignment fold, and stage chain shown in the companion note.
+
+(prompt: FlowFrame { role: 'prompt-sequence', items: '8' })
+(rotated_output: WallingtonRotation { stages: '4', chunks: '4', stageNames: '[embed,attend,ffn,project]' })
+
+(prompt)-[:PROCESS]->(rotated_output)

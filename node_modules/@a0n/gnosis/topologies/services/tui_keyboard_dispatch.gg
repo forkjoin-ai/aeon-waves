@@ -1,0 +1,3 @@
+// tui_keyboard_dispatch.gg — TUI keyboard input handling
+
+(keypress: Event)-[:PROCESS]->(key_mapper: Logic)-[:PROCESS]->(action_dispatch: Dispatcher)

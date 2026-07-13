@@ -1,0 +1,9 @@
+// signing-custodial-weak.gg -- over-broad delegation and wildcard signer action
+
+(request: Request)
+(delegate: UCANDelegate { can: 'halos.*', with: '*', attenuate: 'false', effects: 'auth.ucan' })
+(require: UCANRequire { can: 'halos.*', with: '*', effects: 'auth.ucan' })
+(signer: CustodialSigner { action: '*', effects: 'auth.custodial' })
+(receipt: Receipt)
+
+(request)-[:PROCESS]->(delegate)-[:PROCESS]->(require)-[:PROCESS]->(signer)-[:PROCESS]->(receipt)

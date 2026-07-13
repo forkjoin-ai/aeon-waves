@@ -1,0 +1,80 @@
+[language]
+id = "php"
+grammar = "php"
+extensions = [".php"]
+name = "PHP"
+
+[patterns.function]
+node_types = ["function_definition", "method_declaration"]
+name_field = "name"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if_statement"
+consequence_field = "body"
+alternative_field = "alternative"
+
+[patterns.branch.switch_pattern]
+node_type = "switch_statement"
+body_field = "body"
+case_types = ["switch_case", "switch_default_case"]
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for_statement"
+body_field = "body"
+
+[[patterns.loop.bounded]]
+node_type = "foreach_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while_statement"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "do_statement"
+body_field = "body"
+
+[patterns.error_handling]
+[patterns.error_handling.try_pattern]
+try_type = "try_statement"
+body_field = "body"
+catch_type = "catch_clause"
+catch_body_field = "body"
+finally_type = "finally_clause"
+finally_body_field = "body"
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "fopen("
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "new PDO("
+kind = "Connection"
+
+[[patterns.resource.acquire]]
+text = "mysqli_connect("
+kind = "Connection"
+
+[[patterns.resource.release]]
+text = "fclose("
+kind = "File"
+
+[[patterns.resource.release]]
+text = "->close()"
+kind = "Generic"
+
+[patterns.concurrency]
+# PHP is mostly single-threaded; pcntl for processes.
+[[patterns.concurrency.spawn]]
+text = "pcntl_fork("
+
+[[patterns.concurrency.join]]
+text = "pcntl_waitpid("
+
+[patterns.locking]
+[[patterns.locking.acquire]]
+text = "flock("

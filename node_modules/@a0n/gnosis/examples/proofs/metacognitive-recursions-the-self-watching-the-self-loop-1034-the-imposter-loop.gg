@@ -1,0 +1,12 @@
+// BehaviorLoop_metacognitive_recursions_the_self_watching_the_self_1034_the_imposter_loop.gg -- Buleyean proof topology
+// Converted from BehaviorLoop_metacognitive_recursions_the_self_watching_the_self_1034_the_imposter_loop.tla
+
+(theorem: Theorem { bules: '0', proposition: 'BehaviorLoop_metacognitive_recursions_the_self_watching_the_self_1034_the_imposter_loop' })
+
+(active: Hypothesis { bules: '0', proposition: 'active is well-defined' })
+(beta1: Hypothesis { bules: '0', proposition: 'beta1 is well-defined' })
+(payloadpresent: Hypothesis { bules: '0', proposition: 'payloadPresent is well-defined' })
+(consensusreached: Hypothesis { bules: '0', proposition: 'consensusReached is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

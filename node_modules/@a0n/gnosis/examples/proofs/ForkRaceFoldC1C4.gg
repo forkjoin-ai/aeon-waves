@@ -1,0 +1,21 @@
+// ForkRaceFoldC1C4.gg -- Buleyean proof topology
+// Converted from ForkRaceFoldC1C4.tla
+
+(theorem: Theorem { bules: '0', proposition: 'ForkRaceFoldC1C4' })
+
+(itemcount: Axiom { bules: '0', proposition: 'ItemCount is given' })
+(stagecount: Axiom { bules: '0', proposition: 'StageCount is given' })
+(branchcount: Axiom { bules: '0', proposition: 'BranchCount is given' })
+(maxtime: Axiom { bules: '0', proposition: 'MaxTime is given' })
+
+(pipeq: Hypothesis { bules: '0', proposition: 'pipeQ is well-defined' })
+(done: Hypothesis { bules: '0', proposition: 'done is well-defined' })
+(bstatus: Hypothesis { bules: '0', proposition: 'bStatus is well-defined' })
+(bseq: Hypothesis { bules: '0', proposition: 'bSeq is well-defined' })
+(bout: Hypothesis { bules: '0', proposition: 'bOut is well-defined' })
+(time: Hypothesis { bules: '0', proposition: 'time is well-defined' })
+(folded: Hypothesis { bules: '0', proposition: 'folded is well-defined' })
+(foldout: Hypothesis { bules: '0', proposition: 'foldOut is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

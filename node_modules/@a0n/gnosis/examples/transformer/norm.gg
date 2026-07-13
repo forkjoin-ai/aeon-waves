@@ -1,0 +1,13 @@
+// norm.gg — Layer Normalization
+//
+// Normalize then scale+shift. Pre-norm (applied before attention/FFN)
+// is now standard since GPT-2. The topology is trivially sequential.
+//
+// β₁ = 0
+
+(norm_input: Tensor)
+(statistics: MeanVariance { eps: '1e-5' })
+(normalize: Normalize)
+(scale: Affine { learnable: 'true' })
+
+(norm_input)-[:PROCESS]->(statistics)-[:PROCESS]->(normalize)-[:PROCESS]->(scale)-[:PROCESS]->(norm_out)

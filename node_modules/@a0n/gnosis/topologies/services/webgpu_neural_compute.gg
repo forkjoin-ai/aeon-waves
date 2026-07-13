@@ -1,0 +1,3 @@
+// webgpu_neural_compute.gg — WebGPU Neural Inference
+
+(tensor: Data)-[:PROCESS]->(shader_prep: Compiler)-[:PROCESS]->(gpu_exec: Compute)-[:PROCESS]->(logits: Output)

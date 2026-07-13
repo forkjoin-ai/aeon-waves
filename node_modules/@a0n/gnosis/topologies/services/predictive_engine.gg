@@ -1,0 +1,3 @@
+// predictive_engine.gg — General predictive engine flow
+
+(input_data: Metrics)-[:PROCESS]->(model_inference: ML)-[:PROCESS]->(prediction: Forecast)

@@ -1,0 +1,75 @@
+[language]
+id = "ocaml"
+grammar = "ocaml"
+extensions = [".ml", ".mli"]
+name = "OCaml"
+
+[patterns.function]
+node_types = ["let_binding"]
+name_field = "pattern"
+body_field = "body"
+
+[patterns.branch]
+[patterns.branch.if_pattern]
+node_type = "if_expression"
+consequence_field = "consequence"
+alternative_field = "alternative"
+
+[patterns.branch.match_pattern]
+node_type = "match_expression"
+body_field = "body"
+arm_type = "match_case"
+always_exhaustive = true
+
+[patterns.loop]
+[[patterns.loop.bounded]]
+node_type = "for_expression"
+body_field = "body"
+
+[[patterns.loop.unbounded]]
+node_type = "while_expression"
+body_field = "body"
+
+[patterns.error_handling]
+[patterns.error_handling.try_pattern]
+try_type = "try_expression"
+body_field = "body"
+catch_type = "match_case"
+catch_body_field = "body"
+
+[patterns.resource]
+[[patterns.resource.acquire]]
+text = "open_in"
+kind = "File"
+
+[[patterns.resource.acquire]]
+text = "open_out"
+kind = "File"
+
+[[patterns.resource.release]]
+text = "close_in"
+kind = "File"
+
+[[patterns.resource.release]]
+text = "close_out"
+kind = "File"
+
+[patterns.concurrency]
+[[patterns.concurrency.spawn]]
+text = "Thread.create"
+
+[[patterns.concurrency.spawn]]
+text = "Domain.spawn"
+
+[[patterns.concurrency.join]]
+text = "Thread.join"
+
+[[patterns.concurrency.join]]
+text = "Domain.join"
+
+[patterns.locking]
+[[patterns.locking.acquire]]
+text = "Mutex.lock"
+
+[[patterns.locking.release]]
+text = "Mutex.unlock"

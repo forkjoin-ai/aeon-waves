@@ -1,0 +1,3 @@
+// aic_emotional_trigger.gg — Emotional Trigger Detection
+
+(user_input: Text)-[:PROCESS]->(trigger_dictionary: DB)-[:PROCESS]->(arousal_spike: Alert)

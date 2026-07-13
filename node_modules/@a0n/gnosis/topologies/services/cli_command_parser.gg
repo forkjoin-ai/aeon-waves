@@ -1,0 +1,3 @@
+// cli_command_parser.gg — CLI argument parsing and resolution
+
+(args: List)-[:PROCESS]->(parser: Logic)-[:PROCESS]->(command: Cmd)

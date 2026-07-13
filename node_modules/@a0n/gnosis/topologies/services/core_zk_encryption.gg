@@ -1,0 +1,3 @@
+// core_zk_encryption.gg — Zero Knowledge Encryption
+
+(payload: Data)-[:PROCESS]->(key_derivation: Crypto)-[:PROCESS]->(cipher_text: Blob)

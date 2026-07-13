@@ -1,0 +1,7 @@
+{
+  "chapter": "ch17",
+  "artifact": "content/ch17-arxiv-manuscript.md",
+  "hash": "fb03dfc9b33b27036f0dcfa6351c9609e4a4cd2746e8c507b58c2393e629828f",
+  "timestamp": "2026-03-13T12:52:22Z",
+  "proofs": ["GnosisProofs.lean", "content/companion-tests-README.md"]
+}

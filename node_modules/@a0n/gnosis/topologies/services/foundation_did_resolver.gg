@@ -1,0 +1,3 @@
+// foundation_did_resolver.gg — Decentralized Identifier Resolution
+
+(did: URI)-[:PROCESS]->(resolver: Network)-[:PROCESS]->(document: DIDDoc)

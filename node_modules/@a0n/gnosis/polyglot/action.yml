@@ -1,0 +1,141 @@
+name: 'Gnosis Polyglot Scanner'
+description: 'Universal bug detection via topological verification. Finds resource leaks, race conditions, error swallowing, and more in 20+ languages.'
+author: 'forkjoin-ai'
+
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  path:
+    description: 'File or directory to scan'
+    required: false
+    default: '.'
+  format:
+    description: 'Output format: json, gg, or sarif'
+    required: false
+    default: 'sarif'
+  upload-sarif:
+    description: 'Upload SARIF results to GitHub Code Scanning'
+    required: false
+    default: 'true'
+  fail-on-error:
+    description: 'Fail the workflow if error-level diagnostics are found'
+    required: false
+    default: 'false'
+  include:
+    description: 'Glob patterns to include (comma-separated, e.g. "src/**/*.ts,lib/**/*.py")'
+    required: false
+    default: ''
+  exclude:
+    description: 'Glob patterns to exclude (comma-separated, e.g. "test/**,vendor/**")'
+    required: false
+    default: 'node_modules,vendor,dist,build,target,.git'
+
+outputs:
+  sarif-file:
+    description: 'Path to the generated SARIF file'
+    value: ${{ steps.scan.outputs.sarif-file }}
+  diagnostics-count:
+    description: 'Total number of diagnostics found'
+    value: ${{ steps.scan.outputs.diagnostics-count }}
+  error-count:
+    description: 'Number of error-level diagnostics'
+    value: ${{ steps.scan.outputs.error-count }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Rust toolchain
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        toolchain: stable
+
+    - name: Cache gnosis-polyglot binary
+      id: cache-binary
+      uses: actions/cache@v4
+      with:
+        path: ~/.gnosis-polyglot/bin
+        key: gnosis-polyglot-${{ runner.os }}-${{ hashFiles('**/polyglot/Cargo.lock') }}
+        restore-keys: gnosis-polyglot-${{ runner.os }}-
+
+    - name: Build gnosis-polyglot
+      if: steps.cache-binary.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        # Find the polyglot source -- either in the action's checkout or current repo
+        POLYGLOT_DIR=""
+        if [ -d "${{ github.action_path }}/." ]; then
+          POLYGLOT_DIR="${{ github.action_path }}"
+        elif [ -d "open-source/gnosis/polyglot" ]; then
+          POLYGLOT_DIR="open-source/gnosis/polyglot"
+        elif [ -d "polyglot" ]; then
+          POLYGLOT_DIR="polyglot"
+        fi
+
+        if [ -z "$POLYGLOT_DIR" ] || [ ! -f "$POLYGLOT_DIR/Cargo.toml" ]; then
+          echo "::error::gnosis-polyglot source not found. Ensure the action is checked out correctly."
+          exit 1
+        fi
+
+        mkdir -p ~/.gnosis-polyglot/bin
+        cd "$POLYGLOT_DIR"
+        cargo build --release
+        cp target/release/gnosis-polyglot ~/.gnosis-polyglot/bin/
+
+    - name: Run gnosis-polyglot scan
+      id: scan
+      shell: bash
+      run: |
+        BINARY=~/.gnosis-polyglot/bin/gnosis-polyglot
+        SCAN_PATH="${{ inputs.path }}"
+        FORMAT="${{ inputs.format }}"
+        SARIF_FILE="${{ runner.temp }}/gnosis-polyglot-results.sarif"
+
+        echo "Scanning $SCAN_PATH with gnosis-polyglot..."
+
+        # Run the scan
+        if [ "$FORMAT" = "sarif" ]; then
+          $BINARY "$SCAN_PATH" --format sarif > "$SARIF_FILE" 2>/dev/null || true
+          echo "sarif-file=$SARIF_FILE" >> "$GITHUB_OUTPUT"
+
+          # Count diagnostics
+          ERROR_COUNT=$(cat "$SARIF_FILE" | python3 -c "
+        import json, sys
+        data = json.load(sys.stdin)
+        results = data.get('runs', [{}])[0].get('results', [])
+        errors = [r for r in results if r.get('level') == 'error']
+        print(len(errors))
+        " 2>/dev/null || echo "0")
+
+          TOTAL_COUNT=$(cat "$SARIF_FILE" | python3 -c "
+        import json, sys
+        data = json.load(sys.stdin)
+        results = data.get('runs', [{}])[0].get('results', [])
+        real = [r for r in results if r.get('level') != 'note']
+        print(len(real))
+        " 2>/dev/null || echo "0")
+
+          echo "diagnostics-count=$TOTAL_COUNT" >> "$GITHUB_OUTPUT"
+          echo "error-count=$ERROR_COUNT" >> "$GITHUB_OUTPUT"
+
+          echo "Found $TOTAL_COUNT diagnostics ($ERROR_COUNT errors)"
+
+          # Fail if requested
+          if [ "${{ inputs.fail-on-error }}" = "true" ] && [ "$ERROR_COUNT" -gt 0 ]; then
+            echo "::error::gnosis-polyglot found $ERROR_COUNT error-level diagnostics"
+            exit 1
+          fi
+        else
+          $BINARY "$SCAN_PATH" --format "$FORMAT" 2>/dev/null
+          echo "diagnostics-count=0" >> "$GITHUB_OUTPUT"
+          echo "error-count=0" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Upload SARIF to GitHub Code Scanning
+      if: inputs.upload-sarif == 'true' && inputs.format == 'sarif' && always()
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: ${{ steps.scan.outputs.sarif-file }}
+        category: gnosis-polyglot
+      continue-on-error: true

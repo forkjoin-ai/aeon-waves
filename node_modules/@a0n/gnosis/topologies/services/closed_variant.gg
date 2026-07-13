@@ -1,0 +1,9 @@
+// Closed variants let topologies model reviewable state spaces directly in .gg.
+
+(seed:Source)-[:PROCESS]->(state:Variant { adt: "ReviewState", cases: "ready,retry,timeout", caseFrom: "status" })
+(state)-[:PROCESS { case: "ready" }]->(ready_payload:Destructure { fields: "message,score" })
+(state)-[:PROCESS { case: "retry" }]->(retry_payload:Destructure { fields: "attempts,message" })
+(state)-[:PROCESS { case: "timeout" }]->(timeout_payload:Sink)
+(ready_payload)-[:PROCESS]->(sink:Sink)
+(retry_payload)-[:PROCESS]->(sink)
+(timeout_payload)-[:PROCESS]->(sink)

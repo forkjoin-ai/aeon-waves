@@ -1,0 +1,170 @@
+/**
+ * Implements topology node 'framework_id'
+ *
+ * Topology node: framework_id
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class FrameworkId {
+    public static Object frameworkId(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'language'
+ *
+ * Topology node: language
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class Language {
+    public static Object language(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'detect'
+ *
+ * Topology node: detect
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class Detect {
+    public static Object detect(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'detect_app_names'
+ *
+ * Topology node: detect_app_names
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class DetectAppNames {
+    public static Object detectAppNames(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'parse_route_call'
+ *
+ * Topology node: parse_route_call
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class ParseRouteCall {
+    public static Object parseRouteCall(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'parse_use_call'
+ *
+ * Topology node: parse_use_call
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class ParseUseCall {
+    public static Object parseUseCall(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'parse_listen_call'
+ *
+ * Topology node: parse_listen_call
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class ParseListenCall {
+    public static Object parseListenCall(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'extract_string_arg'
+ *
+ * Topology node: extract_string_arg
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class ExtractStringArg {
+    public static Object extractStringArg(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'extract_handler_name'
+ *
+ * Topology node: extract_handler_name
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class ExtractHandlerName {
+    public static Object extractHandlerName(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+
+/**
+ * Implements topology node 'sanitize_path'
+ *
+ * Topology node: sanitize_path
+ * Labels: Statement, PolyglotBridgeCall
+ */
+public class SanitizePath {
+    public static Object sanitizePath(Object input) {
+        // TODO: implement
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Read JSON from stdin, call function, write JSON to stdout.
+    }
+}
+

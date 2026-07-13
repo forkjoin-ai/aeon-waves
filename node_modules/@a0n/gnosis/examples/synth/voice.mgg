@@ -1,0 +1,38 @@
+// voice.mgg — One Synthesizer Voice
+//
+// A voice is the complete signal path for one note:
+//   Oscillator → Filter → Amplifier (shaped by envelope)
+//
+// The oscillator exists in waveform superposition.
+// The filter collapses the frequency spectrum.
+// The envelope shapes the amplitude over time.
+// The LFO modulates the filter cutoff (vibrato of the spectrum).
+//
+// This is one voice. Polyphony is N voices forked in parallel.
+
+import { freq, osc_out } from './oscillator.gg'
+import { filter_input, cutoff, resonance, filter_out } from './filter.gg'
+import { gate, env_out } from './envelope.gg'
+import { lfo_rate, lfo_out } from './lfo.gg'
+
+// MIDI note arrives
+(note: MIDI { type: 'note' })
+
+// Note → frequency (MIDI to Hz conversion)
+(note)-[:PROCESS]->(freq)
+
+// Note → gate (trigger envelope)
+(note)-[:PROCESS]->(gate)
+
+// LFO modulates filter cutoff
+(lfo_out | cutoff)-[:INTERFERE { mode: 'constructive' }]->(modulated_cutoff: Parameter)
+
+// Oscillator → Filter → VCA
+(osc_out)-[:PROCESS]->(filter_input)
+
+// VCA: multiply signal by envelope (amplitude modulation)
+(filter_out)-[:PROCESS]->(vca: Multiply)
+(env_out)-[:PROCESS]->(vca)
+(vca)-[:PROCESS]->(voice_out)
+
+export { note, voice_out, lfo_rate, cutoff, resonance }

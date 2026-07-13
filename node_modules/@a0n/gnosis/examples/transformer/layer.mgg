@@ -1,0 +1,37 @@
+// layer.mgg — One Transformer Layer
+//
+// Pre-norm → Attention → Residual → Pre-norm → FFN → Residual
+//
+// This is the repeating unit. A transformer is N of these stacked.
+// Each layer has β₁ = 7 (from the 8-head attention fork).
+//
+// The module imports primitives and composes them:
+//   attention.gg provides the multi-head attention topology
+//   ffn.gg provides the feed-forward network
+//   norm.gg provides layer normalization
+//   residual.gg provides the skip connection
+
+import { input, attention_out } from './attention.gg'
+import { ffn_input, ffn_out } from './ffn.gg'
+import { norm_input, norm_out } from './norm.gg'
+import { skip_input, transformed, residual_out } from './residual.gg'
+
+// Layer input
+(layer_input: Tensor)
+
+// Phase 1: Pre-norm → Attention → Residual
+(layer_input)-[:PROCESS]->(norm_input)
+(norm_out)-[:PROCESS]->(input)
+(layer_input)-[:PROCESS]->(skip_input)
+(attention_out)-[:PROCESS]->(transformed)
+
+// Phase 2: Pre-norm → FFN → Residual
+// (reuse norm and residual — the topology is the same pattern)
+(residual_out)-[:PROCESS]->(norm2_input: MeanVariance { eps: '1e-5' })
+(norm2_input)-[:PROCESS]->(norm2_out: Normalize)
+(norm2_out)-[:PROCESS]->(ffn_input)
+(residual_out)-[:PROCESS]->(skip2_input: Tensor)
+(ffn_out)-[:PROCESS]->(transformed2: Tensor)
+(skip2_input | transformed2)-[:INTERFERE { mode: 'constructive' }]->(layer_out)
+
+export { layer_input, layer_out }

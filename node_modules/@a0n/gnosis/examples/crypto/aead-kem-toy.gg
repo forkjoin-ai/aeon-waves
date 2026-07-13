@@ -1,0 +1,12 @@
+// aead-kem-toy.gg -- reduced-strength calibration variant
+
+(secret: Secret)
+(kdf: KDF)
+(session: SessionKey { bindsIdentity: 'false' })
+(nonce: Nonce { reuse: 'true' })
+(encrypt: Encrypt { algorithm: 'toy-kem-40', toy: 'true', bits: '40' })
+(decrypt: Decrypt { oracle: 'true', emitErrors: 'detailed' })
+(envelope: Envelope { replayGuard: 'false' })
+(cipher: Blob)
+
+(secret)-[:PROCESS]->(kdf)-[:PROCESS]->(session)-[:PROCESS]->(nonce)-[:PROCESS]->(encrypt)-[:PROCESS]->(decrypt)-[:PROCESS]->(envelope)-[:PROCESS]->(cipher)

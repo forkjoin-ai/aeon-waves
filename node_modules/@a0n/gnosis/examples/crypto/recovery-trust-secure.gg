@@ -1,0 +1,13 @@
+// recovery-trust-secure.gg -- bounded socio-technical recovery control
+
+(request: Request)
+(channel: Channel { channelBinding: 'true' })
+(identity: IdentityProof { identityBinding: 'true' })
+(approval: Approval { quorum: '2' })
+(audit: Audit { retained: 'true', visible: 'true', alertUser: 'true' })
+(recovery: Recovery { requireProof: 'true', notifyUser: 'true' })
+(trust: TrustEdge { freshnessDays: '14' })
+(helpdesk: Helpdesk { override: 'false', requireTicket: 'true' })
+(receipt: Receipt)
+
+(request)-[:PROCESS]->(channel)-[:PROCESS]->(identity)-[:PROCESS]->(approval)-[:PROCESS]->(audit)-[:PROCESS]->(recovery)-[:PROCESS]->(trust)-[:PROCESS]->(helpdesk)-[:PROCESS]->(receipt)

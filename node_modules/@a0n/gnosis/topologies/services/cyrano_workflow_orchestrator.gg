@@ -1,0 +1,3 @@
+// cyrano_workflow_orchestrator.gg — Cyrano workflow orchestration
+
+(workflow_trigger: Event)-[:PROCESS]->(template_lookup: Config)-[:PROCESS]->(execute_workflow_steps: Flow)

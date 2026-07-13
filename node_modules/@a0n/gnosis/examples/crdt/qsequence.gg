@@ -1,0 +1,18 @@
+// qsequence.gg — Quantum Sequence: positional superposition
+// The hardest CRDT. Text editing with concurrent inserts/deletes.
+// OT-transform adjusts positions during OBSERVE.
+
+(seq: QSequence { collapse: 'ot-transform' })
+
+// Two concurrent edits at different positions
+(seq)-[:FORK]->(edit_a | edit_b)
+
+(edit_a)-[:PROCESS { op: 'insert', pos: '5', char: 'H' }]->(ea)
+(edit_b)-[:PROCESS { op: 'delete', pos: '3', len: '2' }]->(eb)
+
+// OBSERVE with ot-transform: positions adjusted relative to
+// concurrent operations. This is what y.js YATA does —
+// but declared in the topology, not buried in library code.
+(ea | eb)-[:OBSERVE { strategy: 'ot-transform' }]->(merged)
+
+(merged: Converged { type: 'sequence' })

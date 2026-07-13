@@ -1,0 +1,17 @@
+// ObserveCollapse.gg -- Buleyean proof topology
+// Converted from ObserveCollapse.tla
+
+(theorem: Theorem { bules: '0', proposition: 'ObserveCollapse' })
+
+(nodes: Axiom { bules: '0', proposition: 'Nodes is given' })
+(maxbeta1: Axiom { bules: '0', proposition: 'MaxBeta1 is given' })
+
+(beta1: Hypothesis { bules: '0', proposition: 'beta1 is well-defined' })
+(entangled: Hypothesis { bules: '0', proposition: 'entangled is well-defined' })
+(n2: Hypothesis { bules: '0', proposition: 'n2>>} is well-defined' })
+(interfering: Hypothesis { bules: '0', proposition: 'interfering is well-defined' })
+(collapsed: Hypothesis { bules: '0', proposition: 'collapsed is well-defined' })
+(history_append_only_event_log: Hypothesis { bules: '0', proposition: 'history         \* Append-only event log is well-defined' })
+
+(qed: Lemma { bules: '0' })
+(theorem)-[:PROCESS]->(qed)

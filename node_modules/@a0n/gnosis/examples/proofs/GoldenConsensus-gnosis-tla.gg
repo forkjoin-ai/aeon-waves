@@ -1,0 +1,21 @@
+// GoldenConsensus.gg -- Buleyean proof topology
+// Converted from GoldenConsensus.tla
+
+(theorem: Theorem { bules: '1', proposition: 'GoldenConsensus' })
+
+(numnodes: Axiom { bules: '0', proposition: 'NumNodes is given' })
+(maxfaults: Axiom { bules: '0', proposition: 'MaxFaults is given' })
+(maxrounds: Axiom { bules: '0', proposition: 'MaxRounds is given' })
+(sensitivity: Axiom { bules: '0', proposition: 'Sensitivity is given' })
+
+(threshold: Hypothesis { bules: '0', proposition: 'threshold is well-defined' })
+(votes: Hypothesis { bules: '0', proposition: 'votes is well-defined' })
+(deficit: Hypothesis { bules: '0', proposition: 'deficit is well-defined' })
+(prevdeficit: Hypothesis { bules: '0', proposition: 'prevDeficit is well-defined' })
+(round: Hypothesis { bules: '0', proposition: 'round is well-defined' })
+(committed: Hypothesis { bules: '0', proposition: 'committed is well-defined' })
+(deficitratio: Hypothesis { bules: '0', proposition: 'deficitRatio is well-defined' })
+(pc_program_counter_which_operation_executes_next: Hypothesis { bules: '0', proposition: 'pc              \* Program counter: which operation executes next is well-defined' })
+
+(invphiscaled: Lemma { bules: '0' })
+(theorem)-[:REJECT { reason: 'InvPhiScaled holds' }]->(invphiscaled)
