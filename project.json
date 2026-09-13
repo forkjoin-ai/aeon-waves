@@ -16,8 +16,14 @@
     "lint": {
       "executor": "a0:run-commands",
       "options": {
-        "command": "pnpm run monster -- scripts/open-source-repo-target.mjs lint open-source/aeon-waves",
-        "cwd": "."
+        "command": "node open-source/gnosis/bin/gnode.js x eslint open-source/aeon-waves/src",
+        "cwd": ".",
+        "monster": {
+          "nodeLeaf": {
+            "args": ["open-source/gnosis/bin/gnode.js", "x", "eslint", "open-source/aeon-waves/src"],
+            "reason": "Workspace ESLint (root eslint.config.js) through the Gnosis bridge; argv-only so no shell expands the source paths."
+          }
+        }
       }
     },
     "test": {

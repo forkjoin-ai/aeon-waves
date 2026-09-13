@@ -28,6 +28,7 @@
     "README.md"
   ],
   "scripts": {
+    "test": "../gnosis/bin/monster test test",
     "type-check": "tsc --noEmit",
     "typecheck": "tsc --noEmit"
   },
