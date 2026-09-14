@@ -9,7 +9,7 @@
     "build": {
       "executor": "a0:run-commands",
       "options": {
-        "command": "pnpm run monster -- scripts/open-source-repo-target.mjs build open-source/aeon-waves",
+        "command": "pnpm run monster -- scripts/open-source-repo-target.mjs build open-source/aeon-waves --optional",
         "cwd": "."
       }
     },
